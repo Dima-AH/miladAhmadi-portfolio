@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+@theme {
+  --color-deepGreen: #023020;
+  --color-deepGreen-light: #044d33;
+  --color-deepGreen-dark: #011a11;
+
+  --color-luxury-bg: #fafafa;
+  --color-luxury-darkBg: #050505;
+  --color-luxury-text: #011a11;
+  --color-luxury-darkText: #eaeaea;
+  --color-luxury-muted: #6b7280;
+  --color-luxury-darkMuted: #9ca3af;
+
+  --font-family-serif: var(--font-playfair), serif;
+  --font-family-sans: var(--font-inter), sans-serif;
+
+  --ease-luxury: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background-color: var(--color-luxury-bg);
+    color: var(--color-luxury-text);
+    transition:
+      background-color 700ms var(--ease-luxury),
+      color 700ms var(--ease-luxury);
+  }
+  .dark body {
+    background-color: var(--color-luxury-darkBg);
+    color: var(--color-luxury-darkText);
+  }
+  ::selection {
+    background-color: var(--color-deepGreen);
+    color: white;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .border-luxury {
+    border-color: rgb(0 0 0 / 0.08);
+  }
+  .dark .border-luxury {
+    border-color: rgb(255 255 255 / 0.08);
+  }
+}
