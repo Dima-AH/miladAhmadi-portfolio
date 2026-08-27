@@ -6,6 +6,7 @@ import { ThemeProvider } from "../components/ThemeProvider";
 import Navbar from "../components/Navbar";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
+import { Analytics } from "@vercel/analytics/next";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
@@ -13,7 +14,7 @@ const peyda = localFont({
   src: [
     {
       path: "../../../public/fonts/Peyda-Regular.ttf",
-      weight: "400", 
+      weight: "400",
       style: "normal",
     },
   ],
@@ -47,6 +48,7 @@ export default async function RootLayout({
           bg-white dark:bg-black text-black dark:text-white antialiased
         `}
       >
+        <Analytics />
         <NextIntlClientProvider messages={messages}>
           <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
             <Navbar />

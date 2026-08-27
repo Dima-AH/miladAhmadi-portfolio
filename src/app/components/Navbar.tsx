@@ -13,6 +13,7 @@ export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
+
   useEffect(() => setMounted(true), []);
 
   useEffect(() => {
@@ -27,6 +28,7 @@ export default function Navbar() {
   const t = useTranslations("nav");
 
   const slideDirection = isRTL ? "-100%" : "100%";
+
   return (
     <>
       <header
@@ -46,7 +48,7 @@ export default function Navbar() {
             </div>
             <div className="hidden sm:block">
               <div className="font-display text-lg py-0.5 font-semibold text-brand dark:text-ivory tracking-tight leading-none">
-                {t('fullName')}
+                {t("fullName")}
               </div>
               <div className="text-[10px] uppercase tracking-[0.3em] text-luxury-muted dark:text-luxury-darkMuted mt-0.5">
                 {isRTL ? "توسعه‌دهنده فرانت‌اند" : "Frontend Developer"}
@@ -144,13 +146,14 @@ export default function Navbar() {
                 })}
               </nav>
 
-              <div className="p-8 border-t border-luxury flex gap-6 justify-center">
-                {/* GitHub Icon - Fixed to inherit color */}
+              <div className="p-8 border-t border-luxury flex flex-wrap gap-6 justify-center items-center">
+                {/* GitHub Icon */}
                 <a
                   href="https://github.com/Dima-AH"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-12 h-12 rounded-full border border-luxury dark:border-gold/20 flex items-center justify-center text-brand dark:text-gold hover:bg-brand hover:text-ivory dark:hover:bg-gold dark:hover:text-brand transition-all duration-300"
+                  aria-label="GitHub"
                 >
                   <svg
                     role="img"
@@ -163,11 +166,13 @@ export default function Navbar() {
                   </svg>
                 </a>
 
+                {/* LinkedIn Icon */}
                 <a
                   href="https://linkedin.com/in/mr-ahmadi7377"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-12 h-12 rounded-full border border-luxury dark:border-gold/20 flex items-center justify-center text-brand dark:text-gold hover:bg-brand hover:text-ivory dark:hover:bg-gold dark:hover:text-brand transition-all duration-300"
+                  aria-label="LinkedIn"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -177,7 +182,7 @@ export default function Navbar() {
                     strokeWidth="2"
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    className="w-6 h-6"
+                    className="w-6 h-6 stroke-current"
                   >
                     <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
                     <path d="M2 9h4v12H2z" />
@@ -185,14 +190,18 @@ export default function Navbar() {
                   </svg>
                 </a>
 
+                {/* Telegram Icon */}
                 <a
                   href="https://t.me/dima-devs"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-12 h-12 rounded-full border border-luxury dark:border-gold/20 flex items-center justify-center text-brand dark:text-gold hover:bg-brand hover:text-ivory dark:hover:bg-gold dark:hover:text-brand transition-all duration-300"
+                  aria-label="Telegram"
                 >
-                  <Send size={20} />
+                  <Send className="w-6 h-6 stroke-current" />
                 </a>
+
+                <LanguageSwitcher />
               </div>
             </motion.div>
           </motion.div>
