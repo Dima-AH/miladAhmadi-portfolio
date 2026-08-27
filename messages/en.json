@@ -73,7 +73,7 @@
     "items": [
       {
         "period": "Present",
-        "duration": "5 months",
+        "duration": "6 months",
         "company": "Saafaa",
         "role": "Angular / Next.js Developer",
         "type": "Full-time & Freelance",
@@ -90,8 +90,8 @@
         "desc": "Developed responsive, high-performance web applications focusing on component reusability and state management."
       }
     ],
-    "currentBadge": "اکنون",
-    "durationLabel": "مدت زمان"
+    "currentBadge": "Now",
+    "durationLabel": "Duration"
   },
   "projects": {
     "label": "04 — Selected Work",
@@ -104,7 +104,7 @@
         "name": "Rooydado",
         "tech": "Vue.js",
         "company": "",
-        "year": "2025",
+        "year": "2026",
         "type": "Public",
         "role": "Frontend Developer",
         "desc": "A nationwide platform for sharing tours and events, featuring dynamic content rendering and seamless user interactions.",
@@ -114,7 +114,7 @@
         "name": "GeoNet",
         "tech": "Angular",
         "company": "Saafaa",
-        "year": "2025",
+        "year": "2026",
         "type": "Private Project",
         "role": "Angular Developer",
         "desc": "Professional geospatial networking platform featuring complex data visualization and mapping integrations."
@@ -123,7 +123,7 @@
         "name": "GeoTajak Amayesh",
         "tech": "Next.js",
         "company": "Saafaa",
-        "year": "2025",
+        "year": "2026",
         "type": "Private Project",
         "role": "Next.js Developer",
         "link": "https://geotajak.ir/products/geotajak",
@@ -133,7 +133,7 @@
         "name": "FMS",
         "tech": "Angular",
         "company": "Saafaa",
-        "year": "2025",
+        "year": "2026",
         "type": "Private Project",
         "role": "Frontend Developer",
         "link": "https://geotajak.ir/products/fms",
