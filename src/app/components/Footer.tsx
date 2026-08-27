@@ -128,7 +128,7 @@ export default function Footer() {
                 </svg>
               </a>
               <a
-                href="https://t.me/dima-devs"
+                href="https://t.me/Dima_devs"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full border border-ivory/20 flex items-center justify-center text-ivory/70 hover:border-gold hover:text-gold hover:bg-gold/10 transition-all duration-300"

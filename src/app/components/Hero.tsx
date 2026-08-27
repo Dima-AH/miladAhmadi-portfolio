@@ -171,7 +171,7 @@ export default function Hero() {
             </a>
 
             <a
-              href="https://t.me/dima-devs"
+              href="https://t.me/Dima_devs"
               target="_blank"
               rel="noopener noreferrer"
               className="group flex items-center gap-2 text-ivory/50 hover:text-gold transition-colors"

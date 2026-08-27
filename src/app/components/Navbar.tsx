@@ -192,7 +192,7 @@ export default function Navbar() {
 
                 {/* Telegram Icon */}
                 <a
-                  href="https://t.me/dima-devs"
+                  href="https://t.me/Dima_devs"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-12 h-12 rounded-full border border-luxury dark:border-gold/20 flex items-center justify-center text-brand dark:text-gold hover:bg-brand hover:text-ivory dark:hover:bg-gold dark:hover:text-brand transition-all duration-300"
