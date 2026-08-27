@@ -1,23 +1,13 @@
-import Hero from "./components/Hero";
-import About from "./components/About";
-import Skills from "./components/Skills";
-import Experience from "./components/Experience";
-import Projects from "./components/Projects";
-import Education from "./components/Education";
-import Contact from "./components/Contact";
-import Footer from "./components/Footer";
+// src/app/page.tsx
+import { cookies } from "next/headers";
+import { redirect } from "next/navigation";
 
-export default function Home() {
-  return (
-    <div className="flex flex-col">
-      <Hero />
-      <About />
-      <Skills />
-      <Experience />
-      <Projects />
-      <Education />
-      <Contact />
-      <Footer />
-    </div>
-  );
+export default async function RootPage() {
+  const cookieStore = await cookies();
+  const savedLocale = cookieStore.get("MY_APP_LANG")?.value;
+
+  const targetLocale =
+    savedLocale && ["en", "fa"].includes(savedLocale) ? savedLocale : "en";
+
+  redirect(`/${targetLocale}`);
 }

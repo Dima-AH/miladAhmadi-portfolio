@@ -1,142 +1,231 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowUpRight, Lock } from "lucide-react";
+import { ArrowUpRight, Lock, ExternalLink } from "lucide-react";
 import Link from "next/link";
-
-const projects = [
-  {
-    name: "Rooydado",
-    tech: "Vue.js",
-    description: "A nationwide platform for sharing tours and events, featuring dynamic content rendering and seamless user interactions.",
-    role: "Frontend Developer",
-    type: "Public",
-    link: "https://rooydado.com"
-  },
-  {
-    name: "GeoNet",
-    tech: "Angular",
-    description: "Professional geospatial networking platform developed for Saafaa, featuring complex data visualization and mapping integrations.",
-    role: "Angular Developer",
-    type: "Private Project",
-    company: "Saafaa"
-  },
-  {
-    name: "GeoTajak Amayesh",
-    tech: "Next.js",
-    description: "Advanced spatial analysis and mapping application built with Next.js, optimized for performance and large dataset handling.",
-    role: "Next.js Developer",
-    type: "Private Project",
-    company: "Saafaa"
-  },
-  {
-    name: "FMS",
-    tech: "Angular",
-    description: "Comprehensive Fleet Management System for Saafaa, utilizing NG-ZORRO and RxJS for robust state management and enterprise UI.",
-    role: "Frontend Developer",
-    type: "Private Project",
-    company: "Saafaa"
-  }
-];
+import { useTranslations } from "next-intl";
+import { useParams } from "next/navigation";
+import Image from "next/image";
 
 export default function Projects() {
+  const t = useTranslations("projects");
+  const params = useParams();
+  const locale = (params?.locale as string) || "en";
+
+  const projects = t.raw("items") as Array<{
+    name: string;
+    tech: string;
+    company: string;
+    year: string;
+    type: string;
+    role: string;
+    desc: string;
+    link?: string;
+    image?: string;
+  }>;
+
   return (
-    <section id="projects" className="py-24 md:py-32 px-6 md:px-12 lg:px-24 bg-luxury-bg dark:bg-luxury-darkBg border-t border-luxury">
-      <div className="max-w-7xl mx-auto">
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
-          <div>
-            <motion.span
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-sm uppercase tracking-[0.2em] text-deepGreen dark:text-deepGreen-light font-medium"
-            >
-              Selected Work
-            </motion.span>
+    <section
+      id="projects"
+      className="relative py-32 md:py-48 px-6 md:px-12 bg-luxury-bg dark:bg-luxury-darkBg overflow-hidden"
+    >
+      <div className="absolute top-1/4 start-0 w-[500px] h-[500px] bg-brand/5 dark:bg-emerald/10 rounded-full blur-[150px] pointer-events-none" />
+
+      <div className="max-w-[1600px] mx-auto relative">
+        {/* Section Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="flex items-center gap-6 mb-20"
+        >
+          <span
+            className={`text-xs uppercase tracking-[0.4em] text-brand dark:text-gold font-medium ${
+              locale === "fa" ? "font-peyda" : ""
+            }`}
+          >
+            {t("label")}
+          </span>
+          <div className="h-px flex-1 bg-gradient-to-r from-brand/30 to-transparent dark:from-gold/30" />
+        </motion.div>
+
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-20">
+          <div className="lg:max-w-2xl">
             <motion.h2
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="font-serif text-4xl md:text-5xl mt-4 text-luxury-text dark:text-luxury-darkText"
+              className={`font-display text-5xl md:text-7xl lg:text-8xl font-light leading-[1.05] text-luxury-text dark:text-luxury-darkText ${
+                locale === "fa" ? "font-peyda font-black" : ""
+              }`}
             >
-              Featured Projects
+              {t.rich("title", {
+                em: (chunks) => (
+                  <span className="italic text-brand dark:text-gold">
+                    {chunks}
+                  </span>
+                ),
+              })}
             </motion.h2>
           </div>
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
-            <Link 
-              href="https://geotajak.ir/products" 
+          <div className="lg:text-end">
+            <Link
+              href="https://geotajak.ir/products"
               target="_blank"
-              className="inline-flex items-center gap-2 text-sm uppercase tracking-widest text-luxury-muted dark:text-luxury-darkMuted hover:text-deepGreen dark:hover:text-deepGreen-light transition-colors border-b border-current pb-1"
+              className={`inline-flex items-center gap-2 text-sm uppercase tracking-[0.2em] text-luxury-muted dark:text-luxury-darkMuted hover:text-brand dark:hover:text-gold transition-colors border-b border-current pb-1 ${
+                locale === "fa" ? "font-peyda" : ""
+              }`}
             >
-              View Saafaa Public Products <ArrowUpRight size={14} />
+              {t("saafaaLink")} <ExternalLink size={14} />
             </Link>
-          </motion.div>
+          </div>
         </div>
 
-        <div className="space-y-24">
+        {/* Projects List */}
+        <div className="space-y-32">
           {projects.map((project, i) => (
-            <motion.div
+            <motion.article
               key={i}
-              initial={{ opacity: 0, y: 40 }}
+              initial={{ opacity: 0, y: 60 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-              className="group grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start"
+              className="group relative"
             >
-              <div className="lg:col-span-5 relative aspect-[4/3] bg-luxury-text/5 dark:bg-luxury-darkText/5 overflow-hidden">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="font-serif text-6xl md:text-8xl text-luxury-text/5 dark:text-luxury-darkText/5 select-none">
-                    {project.name.charAt(0)}
-                  </span>
-                </div>
-                {project.type === "Private Project" && (
-                  <div className="absolute top-4 left-4 flex items-center gap-2 px-3 py-1.5 bg-luxury-bg/90 dark:bg-luxury-darkBg/90 backdrop-blur-sm border border-luxury text-xs uppercase tracking-wider text-luxury-muted dark:text-luxury-darkMuted">
-                    <Lock size={12} />
-                    Private Project
-                  </div>
-                )}
-              </div>
-              
-              <div className="lg:col-span-7 lg:pt-12">
-                <div className="flex items-center gap-4 mb-4">
-                  <span className="text-xs uppercase tracking-[0.2em] text-deepGreen dark:text-deepGreen-light font-medium">
-                    {project.tech}
-                  </span>
-                  {project.company && (
-                    <span className="text-xs uppercase tracking-[0.2em] text-luxury-muted dark:text-luxury-darkMuted">
-                      — {project.company}
-                    </span>
-                  )}
-                </div>
-                <h3 className="font-serif text-4xl md:text-5xl text-luxury-text dark:text-luxury-darkText mb-6 group-hover:text-deepGreen dark:group-hover:text-deepGreen-light transition-colors duration-300">
-                  {project.name}
-                </h3>
-                <p className="text-lg text-luxury-muted dark:text-luxury-darkMuted leading-relaxed mb-8 max-w-xl">
-                  {project.description}
-                </p>
-                <div className="flex items-center gap-8">
-                  <span className="text-sm text-luxury-muted dark:text-luxury-darkMuted">
-                    <span className="uppercase tracking-wider text-xs block mb-1">Role</span>
-                    {project.role}
-                  </span>
-                  {project.link && (
-                    <Link
-                      href={project.link}
-                      target="_blank"
-                      className="inline-flex items-center gap-2 px-6 py-3 border border-luxury-text/20 dark:border-luxury-darkText/20 text-luxury-text dark:text-luxury-darkText text-sm uppercase tracking-widest hover:bg-deepGreen hover:border-deepGreen hover:text-white dark:hover:bg-deepGreen dark:hover:border-deepGreen transition-all duration-300"
+              <div
+                className={`flex flex-col lg:flex-row gap-8 lg:gap-16 items-center ${
+                  i % 2 !== 0 ? "lg:flex-row-reverse" : ""
+                }`}
+              >
+                {/* Visual Panel */}
+                <div className="w-full lg:w-7/12">
+                  <div className="relative aspect-[16/10] rounded-2xl overflow-hidden gradient-brand glow-emerald">
+                    {/* Background Pattern */}
+                    <div
+                      className="absolute inset-0 opacity-20"
+                      style={{
+                        backgroundImage:
+                          "linear-gradient(45deg, transparent 48%, #C8A96B 49%, #C8A96B 51%, transparent 52%)",
+                        backgroundSize: "30px 30px",
+                      }}
+                    />
+
+                    {/* Large Letter */}
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <span className="font-display text-[20rem] md:text-[24rem] font-light text-ivory/10 select-none group-hover:scale-110 transition-transform duration-1000 ease-luxury">
+                        {project.image ? (
+                          <Image width={500} height={500} alt={project.name} src={project.image} />
+                        ) : (
+                          project.name.charAt(0)
+                        )}
+                      </span>
+                    </div>
+
+                    {/* Noise */}
+                    <div className="absolute inset-0 noise-overlay opacity-30 mix-blend-overlay" />
+
+                    {/* Hover Gradient */}
+                    <div className="absolute inset-0 bg-gradient-to-tr from-black/0 via-black/0 to-gold/0 group-hover:from-black/20 group-hover:to-gold/10 transition-all duration-700" />
+
+                    {project.type === "Private Project" && (
+                      <div
+                        className={`absolute top-6 start-6 flex items-center gap-2 px-4 py-2 rounded-full bg-black/40 backdrop-blur-md border border-gold/30 text-xs uppercase tracking-[0.2em] text-gold ${
+                          locale === "fa" ? "font-peyda" : ""
+                        }`}
+                      >
+                        <Lock size={12} />
+                        {project.type}
+                      </div>
+                    )}
+
+                    <div
+                      className={`absolute bottom-6 end-6 text-xs uppercase tracking-[0.3em] text-ivory/60 ${
+                        locale === "fa" ? "font-peyda" : ""
+                      }`}
                     >
-                      Visit Website <ArrowUpRight size={14} />
-                    </Link>
-                  )}
+                      {project.year}
+                    </div>
+                  </div>
+                </div>
+
+                {/* Content */}
+                <div className="w-full lg:w-5/12">
+                  <div className="flex items-center gap-3 mb-6 flex-wrap">
+                    <span
+                      className={`px-3 py-1 rounded-full bg-brand/10 dark:bg-gold/10 text-brand dark:text-gold text-xs uppercase tracking-[0.2em] font-medium border border-brand/20 dark:border-gold/20 ${
+                        locale === "fa" ? "font-peyda" : ""
+                      }`}
+                    >
+                      {project.tech}
+                    </span>
+                    {project.company && (
+                      <span
+                        className={`text-xs uppercase tracking-[0.2em] text-luxury-muted dark:text-luxury-darkMuted ${
+                          locale === "fa" ? "font-peyda" : ""
+                        }`}
+                      >
+                        @ {project.company}
+                      </span>
+                    )}
+                  </div>
+
+                  <h3
+                    className={`font-display text-5xl md:text-6xl font-light text-luxury-text dark:text-luxury-darkText mb-6 group-hover:text-brand dark:group-hover:text-gold transition-colors duration-500 ${
+                      locale === "fa" ? "font-peyda font-bold" : ""
+                    }`}
+                  >
+                    {project.name}
+                  </h3>
+
+                  <p
+                    className={`text-lg text-luxury-muted dark:text-luxury-darkMuted leading-relaxed mb-8 ${
+                      locale === "fa" ? "font-peyda" : ""
+                    }`}
+                  >
+                    {project.desc}
+                  </p>
+
+                  <div className="flex items-center justify-between pt-6 border-t border-luxury flex-wrap gap-4">
+                    <div>
+                      <div
+                        className={`text-[10px] uppercase tracking-[0.3em] text-luxury-muted dark:text-luxury-darkMuted mb-1 ${
+                          locale === "fa" ? "font-peyda" : ""
+                        }`}
+                      >
+                        {t("roleLabel")}
+                      </div>
+                      <div
+                        className={`text-sm text-luxury-text dark:text-luxury-darkText ${
+                          locale === "fa" ? "font-peyda font-medium" : ""
+                        }`}
+                      >
+                        {project.role}
+                      </div>
+                    </div>
+
+                    {project.link && (
+                      <Link
+                        href={project.link}
+                        target="_blank"
+                        className="group/btn inline-flex items-center gap-2 px-6 py-3 bg-brand dark:bg-gold text-ivory dark:text-brand rounded-full hover:glow-emerald dark:hover:glow-gold transition-all duration-500"
+                      >
+                        <span
+                          className={`text-xs uppercase tracking-[0.2em] ${
+                            locale === "fa" ? "font-peyda" : ""
+                          }`}
+                        >
+                          {t("visitLabel")}
+                        </span>
+                        <ArrowUpRight
+                          size={16}
+                          className="group-hover/btn:rotate-45 transition-transform duration-500 rtl:-rotate-45 rtl:group-hover/btn:rotate-0"
+                        />
+                      </Link>
+                    )}
+                  </div>
                 </div>
               </div>
-            </motion.div>
+            </motion.article>
           ))}
         </div>
       </div>

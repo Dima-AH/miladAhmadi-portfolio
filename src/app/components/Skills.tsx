@@ -1,100 +1,142 @@
 "use client";
 
 import { motion } from "framer-motion";
-
-const coreSkills = ["React / Next.js", "Angular", "Vue.js"];
-const toolSkills = [
-  "TypeScript",
-  "JavaScript",
-  "HTML / CSS",
-  "Tailwind CSS",
-  "RxJS",
-  "MapLibre",
-  "OpenLayers",
-  "Git / GitLab",
-  "NG-ZORRO",
-  "Axios",
-  "Figma",
-];
+import { useTranslations } from "next-intl";
+import { useParams } from "next/navigation";
 
 export default function Skills() {
+  const t = useTranslations("skills");
+  const params = useParams();
+  const locale = (params?.locale as string) || "en";
+
+  const coreSkills = t.raw("core") as { name: string; desc: string }[];
+  const toolSkills = t.raw("tools") as string[];
+
   return (
     <section
       id="skills"
-      className="py-24 md:py-32 px-6 md:px-12 lg:px-24 bg-luxury-bg dark:bg-luxury-darkBg border-t border-luxury"
+      className="relative py-32 md:py-48 px-6 md:px-12 bg-brand dark:bg-surface-dark overflow-hidden"
     >
-      <div className="max-w-7xl mx-auto">
-        <div className="mb-16">
-          <motion.span
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-sm uppercase tracking-[0.2em] text-deepGreen dark:text-deepGreen-light font-medium"
-          >
-            Expertise
-          </motion.span>
-          <motion.h2
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="font-serif text-4xl md:text-5xl mt-4 text-luxury-text dark:text-luxury-darkText"
-          >
-            Technologies & Tools
-          </motion.h2>
-        </div>
+      {/* Background Effects */}
+      <div className="absolute inset-0 noise-overlay opacity-20" />
+      <div className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-emerald/20 rounded-full blur-[150px]" />
+      <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-forest/30 rounded-full blur-[150px]" />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+      <div className="max-w-[1600px] mx-auto relative">
+        {/* Section Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="flex items-center gap-6 mb-20"
+        >
+          <span
+            className={`text-xs uppercase tracking-[0.4em] text-gold font-medium ${locale === "fa" ? "font-peyda" : ""}`}
           >
-            <h3 className="text-sm uppercase tracking-[0.2em] text-luxury-muted dark:text-luxury-darkMuted mb-8 border-b border-luxury pb-4">
-              Core Technologies
-            </h3>
-            <ul className="space-y-4">
-              {coreSkills.map((skill, i) => (
-                <li
-                  key={i}
-                  className="group flex items-center justify-between py-2 border-b border-luxury/50 hover:border-deepGreen/30 dark:hover:border-deepGreen-light/30 transition-colors cursor-default"
-                >
-                  <span className="font-serif text-2xl md:text-3xl text-luxury-text dark:text-luxury-darkText group-hover:text-deepGreen dark:group-hover:text-deepGreen-light transition-colors duration-300">
-                    {skill}
-                  </span>
-                  <span className="text-luxury-muted dark:text-luxury-darkMuted text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    →
-                  </span>
-                </li>
-              ))}
-            </ul>
-          </motion.div>
+            {t("label")}
+          </span>
+          <div className="h-px flex-1 bg-gradient-to-r from-gold/30 to-transparent" />
+        </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-          >
-            <h3 className="text-sm uppercase tracking-[0.2em] text-luxury-muted dark:text-luxury-darkMuted mb-8 border-b border-luxury pb-4">
-              Tools & Ecosystem
-            </h3>
-            <div className="flex flex-wrap gap-3">
-              {toolSkills.map((skill, i) => (
-                <motion.span
-                  key={i}
-                  whileHover={{
-                    scale: 1.05,
-                    backgroundColor: "rgba(2, 48, 32, 0.05)",
-                  }}
-                  className="px-4 py-2 border border-luxury dark:border-white/10 text-sm text-luxury-text dark:text-luxury-darkText rounded-sm hover:border-deepGreen/30 dark:hover:border-deepGreen-light/30 dark:hover:bg-white/5 transition-all duration-300 cursor-default"
-                >
-                  {skill}
-                </motion.span>
-              ))}
+        <motion.h2
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className={`font-display text-5xl md:text-7xl lg:text-8xl font-light leading-[1.05] text-ivory mb-20 ${
+            locale === "fa" ? "font-peyda font-black" : ""
+          }`}
+        >
+          {t.rich("title", {
+            em: (chunks) => <span className="italic text-gold">{chunks}</span>,
+          })}
+        </motion.h2>
+
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20">
+          {/* Core Skills */}
+          <div className="lg:col-span-7 space-y-6">
+            <div
+              className={`text-xs uppercase tracking-[0.3em] text-gold/70 mb-8 ${locale === "fa" ? "font-peyda" : ""}`}
+            >
+              {t("coreTitle")}
             </div>
-          </motion.div>
+            {coreSkills.map((skill, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className="group relative p-8 rounded-2xl border border-ivory/10 bg-black/20 backdrop-blur-sm hover:border-gold/40 hover:bg-black/40 transition-all duration-500"
+              >
+                <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-gold/0 via-gold/5 to-gold/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+                <div className="relative flex items-center justify-between gap-6">
+                  <div>
+                    <h3
+                      className={`font-display text-3xl md:text-4xl text-ivory group-hover:text-gold transition-colors duration-500 mb-2 ${
+                        locale === "fa" ? "font-peyda font-bold" : ""
+                      }`}
+                    >
+                      {skill.name}
+                    </h3>
+                    <p
+                      className={`text-sm text-ivory/60 ${locale === "fa" ? "font-peyda" : ""}`}
+                    >
+                      {skill.desc}
+                    </p>
+                  </div>
+                  <div className="w-12 h-12 rounded-full border border-gold/30 flex items-center justify-center group-hover:bg-gold group-hover:text-brand transition-all duration-500 text-gold">
+                    <span
+                      className={`font-display text-xl font-bold ${locale === "fa" ? "font-peyda" : ""}`}
+                    >
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Tools Grid */}
+          <div className="lg:col-span-5">
+            <div
+              className={`text-xs uppercase tracking-[0.3em] text-gold/70 mb-8 ${locale === "fa" ? "font-peyda" : ""}`}
+            >
+              {t("toolsTitle")}
+            </div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="p-8 rounded-2xl border border-ivory/10 bg-black/20 backdrop-blur-sm"
+            >
+              <div className="flex flex-wrap gap-2">
+                {toolSkills.map((skill, i) => (
+                  <motion.span
+                    key={i}
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: i * 0.03 }}
+                    whileHover={{ scale: 1.05 }}
+                    className={`px-4 py-2 border border-ivory/10 text-sm text-ivory/80 rounded-full hover:border-gold hover:text-gold hover:bg-gold/10 transition-all duration-300 cursor-default ${
+                      locale === "fa" ? "font-peyda" : ""
+                    }`}
+                  >
+                    {skill}
+                  </motion.span>
+                ))}
+              </div>
+
+              <div className="mt-8 pt-8 border-t border-ivory/10">
+                <p
+                  className={`text-sm text-ivory/60 italic ${locale === "fa" ? "font-peyda" : ""}`}
+                >
+                  {t("quote")}
+                </p>
+              </div>
+            </motion.div>
+          </div>
         </div>
       </div>
     </section>

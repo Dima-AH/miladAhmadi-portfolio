@@ -1,41 +1,53 @@
 @import "tailwindcss";
 
 @theme {
-  --color-deepGreen: #023020;
-  --color-deepGreen-light: #044d33;
-  --color-deepGreen-dark: #011a11;
+  /* === Luxury Brand Palette === */
+  --color-brand: #023020;
+  --color-emerald: #0b5d3b;
+  --color-forest: #134e3a;
+  --color-surface-dark: #0a1f18;
+  --color-gold: #c8a96b;
+  --color-gold-light: #e0c98f;
+  --color-ivory: #f8f6f0;
+  --color-pure-white: #ffffff;
+  --color-deep-black: #050505;
 
-  --color-luxury-bg: #fafafa;
+  --color-luxury-bg: #f8f6f0;
   --color-luxury-darkBg: #050505;
-  --color-luxury-text: #011a11;
-  --color-luxury-darkText: #eaeaea;
-  --color-luxury-muted: #6b7280;
-  --color-luxury-darkMuted: #9ca3af;
-
-  --font-family-serif: var(--font-playfair), serif;
-  --font-family-sans: var(--font-inter), sans-serif;
-
+  --color-luxury-text: #0a1f18;
+  --color-luxury-darkText: #f8f6f0;
+  --color-luxury-muted: #4a5d55;
+  --color-luxury-darkMuted: #8a9a92;
+  --color-luxury-border: rgba(2, 48, 32, 0.12);
+  --color-luxury-darkBorder: rgba(200, 169, 107, 0.15);
+  --font-display: var(--font-cormorant), serif;
+  --font-body: var(--font-inter), sans-serif;
+  --font-peyda: var(--font-peyda), sans-serif;
   --ease-luxury: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-premium: cubic-bezier(0.22, 1, 0.36, 1);
 }
-
 @layer base {
   html {
     scroll-behavior: smooth;
   }
+
   body {
     background-color: var(--color-luxury-bg);
     color: var(--color-luxury-text);
     transition:
-      background-color 700ms var(--ease-luxury),
-      color 700ms var(--ease-luxury);
+      background-color 0.8s var(--ease-luxury),
+      color 0.8s var(--ease-luxury);
+    font-feature-settings: "ss01", "ss02";
   }
+
   .dark body {
     background-color: var(--color-luxury-darkBg);
     color: var(--color-luxury-darkText);
   }
+
   ::selection {
-    background-color: var(--color-deepGreen);
-    color: white;
+    background-color: var(--color-brand);
+    color: var(--color-gold);
   }
 }
 
@@ -43,10 +55,105 @@
   .text-balance {
     text-wrap: balance;
   }
+
   .border-luxury {
-    border-color: rgb(0 0 0 / 0.08);
+    border-color: var(--color-luxury-border);
   }
   .dark .border-luxury {
-    border-color: rgb(255 255 255 / 0.08);
+    border-color: var(--color-luxury-darkBorder);
+  }
+  .glow-emerald {
+    box-shadow:
+      0 0 40px rgba(2, 48, 32, 0.3),
+      0 0 80px rgba(11, 93, 59, 0.15);
+  }
+  .dark .glow-emerald {
+    box-shadow:
+      0 0 60px rgba(2, 48, 32, 0.5),
+      0 0 120px rgba(11, 93, 59, 0.25);
+  }
+  .glow-gold {
+    box-shadow: 0 0 30px rgba(200, 169, 107, 0.25);
+  }
+  .glass-luxury {
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(2, 48, 32, 0.1);
+  }
+  .dark .glass-luxury {
+    background: rgba(10, 31, 24, 0.6);
+    border: 1px solid rgba(200, 169, 107, 0.1);
+  }
+  .gradient-brand {
+    background: linear-gradient(135deg, #023020 0%, #0b5d3b 50%, #134e3a 100%);
+  }
+  .gradient-gold {
+    background: linear-gradient(135deg, #c8a96b 0%, #e0c98f 100%);
+  }
+  .gradient-cinematic {
+    background: radial-gradient(
+      ellipse at top,
+      #0b5d3b 0%,
+      #023020 40%,
+      #050505 100%
+    );
+  }
+  .line-gold {
+    background: linear-gradient(90deg, transparent, #c8a96b, transparent);
+  }
+  .line-emerald {
+    background: linear-gradient(90deg, transparent, #0b5d3b, transparent);
+  }
+  .noise-overlay {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.4'/%3E%3C/svg%3E");
+  }
+  @keyframes shine {
+    0% {
+      background-position: -200% center;
+    }
+    100% {
+      background-position: 200% center;
+    }
+  }
+  .text-shine {
+    background: linear-gradient(
+      90deg,
+      #c8a96b 0%,
+      #e0c98f 25%,
+      #c8a96b 50%,
+      #e0c98f 75%,
+      #c8a96b 100%
+    );
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shine 6s linear infinite;
+  }
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  @keyframes pulse-glow {
+    0%,
+    100% {
+      opacity: 0.4;
+    }
+    50% {
+      opacity: 0.8;
+    }
+  }
+  .animate-pulse-glow {
+    animation: pulse-glow 4s ease-in-out infinite;
   }
 }

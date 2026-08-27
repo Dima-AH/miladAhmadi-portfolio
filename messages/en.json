@@ -1,0 +1,213 @@
+{
+  "nav": {
+    "fullName": "Milad Ahmadi",
+    "home": "Home",
+    "about": "About",
+    "skills": "Skills",
+    "experience": "Experience",
+    "projects": "Projects",
+    "contact": "Contact",
+    "articles": "articles"
+  },
+  "hero": {
+    "badge": "Available for Projects · 2026",
+    "role": "Frontend Developer",
+    "firstName": "Milad",
+    "lastName": "Ahmadi",
+    "description": "Crafting <em>modern, scalable</em>, and high-quality web applications with meticulous attention to detail, performance, and elegant user experiences.",
+    "ctaProjects": "View Projects",
+    "ctaContact": "Contact Me",
+    "github": "GitHub",
+    "linkedin": "LinkedIn",
+    "telegram": "Telegram",
+    "location": "Yazd, Iran",
+    "scroll": "Scroll"
+  },
+  "about": {
+    "label": "01 — About",
+    "title": "Where <em>craftsmanship</em> meets code.",
+    "basedInLabel": "Based in",
+    "basedInValue": "Yazd, Iran",
+    "p1": "I am a Frontend Developer specializing in building exceptional digital experiences. My expertise spans React, Next.js, Angular, and Vue.js — the pillars of modern frontend architecture.",
+    "p2": "Currently contributing to innovative solutions at Saafaa while taking on select freelance projects. I believe true quality lies in the details: clean architecture, thoughtful animations, and an unwavering commitment to user-centric design.",
+    "stats": {
+      "years": "Years Coding",
+      "projects": "Major Projects",
+      "frameworks": "Core Frameworks"
+    }
+  },
+  "skills": {
+    "label": "02 — Expertise",
+    "title": "Technologies & <em>Tools of the Trade</em>",
+    "coreTitle": "Core Technologies",
+    "core": [
+      {
+        "name": "React / Next.js",
+        "desc": "Component architecture, SSR, App Router"
+      },
+      { "name": "Angular", "desc": "Enterprise applications, RxJS, NG-ZORRO" },
+      { "name": "Vue.js", "desc": "Reactive systems, composition API" }
+    ],
+    "toolsTitle": "Ecosystem & Utilities",
+    "tools": [
+      "TypeScript",
+      "JavaScript",
+      "HTML",
+      "CSS",
+      "Bootstrap",
+      "Tailwind CSS",
+      "RxJS",
+      "OpenLayers",
+      "Git",
+      "GitLab",
+      "NG-ZORRO",
+      "Axios",
+      "Figma"
+    ],
+    "quote": "\"The right tool for the right challenge — selected with precision.\""
+  },
+  "experience": {
+    "label": "03 — Career",
+    "title": "Professional <em>Journey</em>",
+    "subtitle": "A focused path through modern frontend development, building enterprise-grade applications with cutting-edge technologies.",
+    "items": [
+      {
+        "period": "Present",
+        "duration": "5 months",
+        "company": "Saafaa",
+        "role": "Angular / Next.js Developer",
+        "type": "Full-time & Freelance",
+        "current": true,
+        "desc": "Developing internal enterprise applications and geospatial features. Also actively taking on select freelance projects."
+      },
+      {
+        "period": "Past",
+        "duration": "3 months",
+        "company": "Chabok Andishan Parandeh Afarin",
+        "role": "React / Next.js Developer",
+        "type": "Contract",
+        "current": false,
+        "desc": "Developed responsive, high-performance web applications focusing on component reusability and state management."
+      }
+    ],
+    "currentBadge": "اکنون",
+    "durationLabel": "مدت زمان"
+  },
+  "projects": {
+    "label": "04 — Selected Work",
+    "title": "Featured <em>Projects</em>",
+    "saafaaLink": "View Saafaa Products",
+    "roleLabel": "Role",
+    "visitLabel": "Visit",
+    "items": [
+      {
+        "name": "Rooydado",
+        "tech": "Vue.js",
+        "company": "",
+        "year": "2025",
+        "type": "Public",
+        "role": "Frontend Developer",
+        "desc": "A nationwide platform for sharing tours and events, featuring dynamic content rendering and seamless user interactions.",
+        "link": "https://rooydado.com"
+      },
+      {
+        "name": "GeoNet",
+        "tech": "Angular",
+        "company": "Saafaa",
+        "year": "2025",
+        "type": "Private Project",
+        "role": "Angular Developer",
+        "desc": "Professional geospatial networking platform featuring complex data visualization and mapping integrations."
+      },
+      {
+        "name": "GeoTajak Amayesh",
+        "tech": "Next.js",
+        "company": "Saafaa",
+        "year": "2025",
+        "type": "Private Project",
+        "role": "Next.js Developer",
+        "link": "https://geotajak.ir/products/geotajak",
+        "desc": "Advanced spatial analysis and mapping application optimized for performance and large dataset handling."
+      },
+      {
+        "name": "FMS",
+        "tech": "Angular",
+        "company": "Saafaa",
+        "year": "2025",
+        "type": "Private Project",
+        "role": "Frontend Developer",
+        "link": "https://geotajak.ir/products/fms",
+        "desc": "Comprehensive Fleet Management System utilizing NG-ZORRO and RxJS for robust state management."
+      }
+    ]
+  },
+  "education": {
+    "label": "05 — Education",
+    "title": "Academic <em>Background</em>",
+    "items": [
+      {
+        "period": "2026 – Present",
+        "current": true,
+        "institution": "Yazd University",
+        "degree": "Bachelor's Degree"
+      },
+      {
+        "period": "2023 – 2026",
+        "current": false,
+        "institution": "Montazer Ghaem Technical School",
+        "degree": "Technical Diploma"
+      }
+    ],
+    "currentBadge": "Current"
+  },
+  "contact": {
+    "label": "06 — Contact",
+    "title": "Let's build <em>something</em> exceptional.",
+    "subtitle": "Have a project in mind or want to discuss modern web architecture? I'm always open to new opportunities and creative challenges.",
+    "items": [
+      {
+        "label": "Phone",
+        "value": "+98 998 250 7377",
+        "href": "tel:+989982507377"
+      },
+      {
+        "label": "Telegram",
+        "value": "@dima-devs",
+        "href": "https://t.me/dima-devs"
+      },
+      {
+        "label": "GitHub",
+        "value": "Dima-AH",
+        "href": "https://github.com/Dima-AH"
+      },
+      {
+        "label": "LinkedIn",
+        "value": "mr-ahmadi7377",
+        "href": "https://linkedin.com/in/mr-ahmadi7377"
+      }
+    ]
+  },
+  "footer": {
+    "name": "Milad Ahmadi",
+    "role": "Frontend Developer",
+    "desc": "Crafting modern, scalable, and high-quality web applications with meticulous attention to detail and elegant user experiences.",
+    "navTitle": "Navigation",
+    "connectTitle": "Connect",
+    "phoneTitle": "Phone",
+    "copyright": "© {year} Milad Ahmadi. All Rights Reserved.",
+    "crafted": "Crafted with precision in Yazd, Iran",
+    "phone": "+9982507377"
+  },
+  "articles": {
+    "label": "Articles & Insights",
+    "title": "Latest <em>Writings</em>",
+    "readMore": "Read Article",
+    "backToArticles": "Back to Articles",
+    "readTime": "min read",
+    "categories": {
+      "engineering": "Engineering",
+      "architecture": "Architecture",
+      "design": "Design"
+    }
+  }
+}
