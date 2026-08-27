@@ -47,7 +47,7 @@ export default function Skills() {
           }`}
         >
           {t.rich("title", {
-            em: (chunks) => <span className="italic text-gold">{chunks}</span>,
+            em: (chunks) => <span className="  text-gold">{chunks}</span>,
           })}
         </motion.h2>
 
@@ -130,7 +130,7 @@ export default function Skills() {
 
               <div className="mt-8 pt-8 border-t border-ivory/10">
                 <p
-                  className={`text-sm text-ivory/60 italic ${locale === "fa" ? "font-peyda" : ""}`}
+                  className={`text-sm text-ivory/60   ${locale === "fa" ? "font-peyda" : ""}`}
                 >
                   {t("quote")}
                 </p>

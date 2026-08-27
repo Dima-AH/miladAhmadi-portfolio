@@ -47,7 +47,7 @@ export default function Education() {
             >
               {t.rich("title", {
                 em: (chunks) => (
-                  <span className="italic text-gold">{chunks}</span>
+                  <span className="  text-gold">{chunks}</span>
                 ),
               })}
             </motion.h2>

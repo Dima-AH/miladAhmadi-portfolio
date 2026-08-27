@@ -66,7 +66,7 @@ export default function Contact() {
             >
               {t.rich("title", {
                 em: (chunks) => (
-                  <span className="italic text-brand dark:text-gold">
+                  <span className="  text-brand dark:text-gold">
                     {chunks}
                   </span>
                 ),

@@ -66,7 +66,7 @@ export default function Hero() {
               }`}
             >
               <span className="block">{t("hero.firstName")}</span>
-              <span className="block italic text-shine font-medium z-50 ps-3">
+              <span className="block   text-shine font-medium z-50 ps-3">
                 {t("hero.lastName")}
               </span>
             </h1>
@@ -84,7 +84,7 @@ export default function Hero() {
             <p className="text-lg md:text-xl text-ivory/70 leading-relaxed max-w-xl font-light">
               {t.rich("hero.description", {
                 em: (chunks) => (
-                  <span className="text-gold italic">{chunks}</span>
+                  <span className="text-gold  ">{chunks}</span>
                 ),
               })}
             </p>
