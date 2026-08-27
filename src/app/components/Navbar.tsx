@@ -79,18 +79,20 @@ export default function Navbar() {
             <LanguageSwitcher />
           </nav>
 
-          {/* Mobile Menu Button */}
-          <button
-            className="md:hidden w-10 h-10 rounded-full border border-luxury dark:border-gold/20 flex items-center justify-center text-brand dark:text-gold hover:bg-brand/5 dark:hover:bg-gold/5 transition-colors"
-            onClick={() => setIsMobileMenuOpen(true)}
-            aria-label="Open menu"
-          >
-            <Menu size={20} />
-          </button>
+          <div className="md:hidden flex items-center gap-3">
+            <LanguageSwitcher />
+            <button
+              className="w-10 h-10 rounded-full border border-luxury dark:border-gold/20 flex items-center justify-center text-brand dark:text-gold hover:bg-brand/5 dark:hover:bg-gold/5 transition-colors"
+              onClick={() => setIsMobileMenuOpen(true)}
+              aria-label="Open menu"
+            >
+              <Menu size={20} />
+            </button>
+          </div>
         </div>
       </header>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu Overlay */}
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
@@ -200,8 +202,6 @@ export default function Navbar() {
                 >
                   <Send className="w-6 h-6 stroke-current" />
                 </a>
-
-                <LanguageSwitcher />
               </div>
             </motion.div>
           </motion.div>
