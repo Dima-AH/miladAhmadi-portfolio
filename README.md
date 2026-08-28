@@ -40,9 +40,9 @@ A modern, high-performance, and fully responsive personal portfolio built with *
 │   │   │   ├── layout.tsx     # Root layout with i18n & font providers
 │   │   │   └── page.tsx       # Main portfolio page
 │   │   └── components/        # Reusable UI components (Navbar, Hero, About, etc.)
-│   ├── configs/               # Configuration files (e.g., Navbar items)
-│   ├── features/              # Feature-specific components (e.g., LanguageSwitcher)
-│   └── messages/              # JSON translation files (en.json, fa.json)
+│   │   │   └── features/              # Feature-specific components (e.g., LanguageSwitcher)
+│   └── configs/               # Configuration files (e.g., Navbar items)
+└── messages/              # JSON translation files (en.json, fa.json)
 ├── public/
 │   └── fonts/                 # Local font files (e.g., Peyda-Regular.ttf)
 ├── middleware.ts              # Next.js middleware for i18n routing
