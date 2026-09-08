@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { ArrowUpRight, Calendar, Clock } from "lucide-react";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
-import articlesData from "@/app/data/articles.json";
+import { articles } from "@/app/data/articles";
 import { useParams } from "next/navigation";
 
 export default function ArticlesPage() {
@@ -13,7 +13,7 @@ export default function ArticlesPage() {
   const locale = (params?.locale as string) || "en";
   const isFa = locale === "fa";
 
-  const publishedArticles = articlesData.filter((article) => article.published);
+  const publishedArticles = articles.filter((article) => article.published);
 
   return (
     <section className="relative h-full py-32 md:py-48 px-6 md:px-12 bg-brand dark:bg-surface-dark overflow-hidden">

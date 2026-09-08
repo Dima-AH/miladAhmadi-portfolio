@@ -1,10 +1,13 @@
 import { notFound } from "next/navigation";
-import articlesData from "@/app/data/articles.json";
+import { articles } from "@/app/data/articles";
 import ArticleClient from "./ArticleClient";
+
 export async function generateStaticParams() {
-  return articlesData.map((article) => ({
-    slug: article.slug,
-  }));
+  return articles
+    .filter((article) => article.published) // فقط مقالات منتشر شده
+    .map((article) => ({
+      slug: article.slug,
+    }));
 }
 
 export default async function ArticlePage({
@@ -14,9 +17,9 @@ export default async function ArticlePage({
 }) {
   const { locale, slug } = await params;
 
-  const article = articlesData.find((a) => a.slug === slug);
+  const article = articles.find((a) => a.slug === slug);
 
-  if (!article) {
+  if (!article || !article.published) {
     notFound();
   }
 

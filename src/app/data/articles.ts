@@ -1,4 +1,4 @@
-[
+export const articles = [
   {
     "slug": "cross-browser-compatibility",
     "title": "The Rogue Translators of the Web: Mastering Cross-Browser Compatibility",
