@@ -19,11 +19,11 @@ export default function ArticlesPage() {
     <section className="relative h-full py-32 md:py-48 px-6 md:px-12 bg-brand dark:bg-surface-dark overflow-hidden">
       {/* Background Effects */}
       <div className="absolute inset-0 noise-overlay opacity-20" />
-      <div className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-emerald/20 rounded-full blur-[150px] animate-pulse-glow" />
-      <div
+      {/* <div className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-emerald/20 rounded-full blur-[150px] animate-pulse-glow" /> */}
+      {/* <div
         className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-forest/30 rounded-full blur-[150px] animate-pulse-glow"
         style={{ animationDelay: "2s" }}
-      />
+      /> */}
 
       <div className="max-w-[1600px] mx-auto relative">
         {/* Section Header */}

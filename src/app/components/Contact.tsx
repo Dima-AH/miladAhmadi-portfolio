@@ -28,13 +28,13 @@ export default function Contact() {
       id="contact"
       className="relative py-32 md:py-48 px-6 md:px-12 bg-luxury-bg dark:bg-luxury-darkBg overflow-hidden"
     >
-      <div className="absolute inset-0">
+      {/* <div className="absolute inset-0">
         <div className="absolute top-1/4 start-1/4 w-[600px] h-[600px] bg-brand/10 dark:bg-emerald/20 rounded-full blur-[150px] animate-pulse-glow" />
         <div
           className="absolute bottom-1/4 end-1/4 w-[500px] h-[500px] bg-gold/5 dark:bg-gold/10 rounded-full blur-[150px] animate-pulse-glow"
           style={{ animationDelay: "2s" }}
         />
-      </div>
+      </div> */}
 
       <div className="max-w-[1600px] mx-auto relative">
         <motion.div
