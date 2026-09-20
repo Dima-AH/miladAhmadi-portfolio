@@ -138,6 +138,16 @@
         "role": "Frontend Developer",
         "link": "https://geotajak.ir/products/fms",
         "desc": "Comprehensive Fleet Management System utilizing NG-ZORRO and RxJS for robust state management."
+      },
+      {
+        "name": "Jariantic",
+        "tech": "Next.js",
+        "company": "",
+        "year": "2026",
+        "type": "Public",
+        "role": "Next.js Developer",
+        "desc": "A high-performance, modern ticketing and booking platform featuring seamless user flows, dynamic content rendering, and a highly responsive interface.",
+        "link": "https://jariantick.com/"
       }
     ]
   },

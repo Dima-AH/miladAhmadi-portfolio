@@ -14,14 +14,14 @@ export default function Hero() {
   return (
     <section className="relative h-[100vh] overflow-hidden gradient-cinematic">
       {/* Animated Light Effects */}
-      <div className="absolute inset-0">
+      {/* <div className="absolute inset-0">
         <div className="absolute top-1/4 -left-20 w-[600px] h-[600px] bg-emerald/30 rounded-full blur-[150px] animate-pulse-glow" />
         <div
           className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-brand/40 rounded-full blur-[120px] animate-pulse-glow"
           style={{ animationDelay: "2s" }}
         />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-forest/20 rounded-full blur-[200px]" />
-      </div>
+      </div> */}
 
       {/* Noise Texture */}
       <div className="absolute inset-0 noise-overlay opacity-30 mix-blend-overlay" />
