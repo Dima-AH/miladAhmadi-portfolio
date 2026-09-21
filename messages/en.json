@@ -62,7 +62,8 @@
       "GitLab",
       "NG-ZORRO",
       "Axios",
-      "Figma"
+      "Figma",
+      "GSAP"
     ],
     "quote": "\"The right tool for the right challenge — selected with precision.\""
   },
@@ -206,7 +207,7 @@
     "phoneTitle": "Phone",
     "copyright": "© {year} Milad Ahmadi. All Rights Reserved.",
     "crafted": "Crafted with precision in Yazd, Iran",
-    "phone": "+9982507377"
+    "phone": "+98 998 250 7377"
   },
   "articles": {
     "title": "Latest <em>Writings</em>",
