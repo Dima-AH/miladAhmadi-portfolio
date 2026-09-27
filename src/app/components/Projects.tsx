@@ -45,6 +45,14 @@ export default function Projects() {
       return;
     }
 
+    // Respect prefers-reduced-motion
+    if (
+      typeof window !== "undefined" &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    ) {
+      return;
+    }
+
     const ctx = gsap.context(() => {
       const articles =
         section.querySelectorAll<HTMLElement>("[data-project]");
@@ -550,6 +558,9 @@ export default function Projects() {
                             height={600}
                             alt={project.name}
                             src={project.image}
+                            sizes="(max-width: 1024px) 100vw, 58vw"
+                            loading="lazy"
+                            quality={80}
                             className="project-image h-auto max-h-[82%] w-auto max-w-[88%] object-contain"
                           />
                         ) : (

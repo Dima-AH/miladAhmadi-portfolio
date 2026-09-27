@@ -12,7 +12,10 @@ export default function Hero() {
   const locale = (params?.locale as string) || "en";
 
   return (
-    <section className="relative h-[100vh] overflow-hidden gradient-cinematic">
+    <section
+      aria-label={t("hero.badge")}
+      className="relative h-[100vh] overflow-hidden gradient-cinematic"
+    >
       {/* Animated Light Effects */}
       {/* <div className="absolute inset-0">
         <div className="absolute top-1/4 -left-20 w-[600px] h-[600px] bg-emerald/30 rounded-full blur-[150px] animate-pulse-glow" />
@@ -24,7 +27,10 @@ export default function Hero() {
       </div> */}
 
       {/* Noise Texture */}
-      <div className="absolute inset-0 noise-overlay opacity-30 mix-blend-overlay" />
+      <div
+        className="absolute inset-0 noise-overlay opacity-30 mix-blend-overlay"
+        aria-hidden="true"
+      />
 
       {/* Content */}
       <div className="relative z-10 max-w-[1600px] mx-auto px-6 md:px-12 pt-12 md:pt-20 pb-20 min-h-screen flex flex-col justify-center">

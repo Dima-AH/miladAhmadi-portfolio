@@ -12,15 +12,39 @@ import { navItems } from "../configs/NavbarItems";
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => setMounted(true), []);
 
   useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 50);
-    window.addEventListener("scroll", handleScroll);
+    let ticking = false;
+    const handleScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          setIsScrolled(window.scrollY > 50);
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  // Lock body scroll when mobile menu open + ESC to close
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = "hidden";
+      const onKeyDown = (e: KeyboardEvent) => {
+        if (e.key === "Escape") setIsMobileMenuOpen(false);
+      };
+      window.addEventListener("keydown", onKeyDown);
+      return () => {
+        document.body.style.overflow = "";
+        window.removeEventListener("keydown", onKeyDown);
+      };
+    } else {
+      document.body.style.overflow = "";
+    }
+  }, [isMobileMenuOpen]);
 
   const params = useParams();
   const locale = (params?.locale as string) || "en";
@@ -32,6 +56,7 @@ export default function Navbar() {
   return (
     <>
       <header
+        role="banner"
         className={`fixed top-0 start-0 end-0 z-50 transition-all duration-500 ease-luxury ${
           isScrolled
             ? "bg-luxury-bg/80 dark:bg-luxury-darkBg/80 backdrop-blur-md border-b border-luxury"
@@ -57,7 +82,7 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop Nav */}
-          <nav className="hidden md:flex items-center gap-8">
+          <nav className="hidden md:flex items-center gap-8" aria-label="Primary navigation">
             {navItems.map((item) => {
               const href =
                 item.path === "/" ? `/${locale}` : `/${locale}${item.path}`;
@@ -85,6 +110,9 @@ export default function Navbar() {
               className="w-10 h-10 rounded-full border border-luxury dark:border-gold/20 flex items-center justify-center text-brand dark:text-gold hover:bg-brand/5 dark:hover:bg-gold/5 transition-colors"
               onClick={() => setIsMobileMenuOpen(true)}
               aria-label="Open menu"
+              aria-expanded={isMobileMenuOpen}
+              aria-controls="mobile-menu"
+              type="button"
             >
               <Menu size={20} />
             </button>
@@ -100,6 +128,10 @@ export default function Navbar() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             className="fixed inset-0 z-[60] md:hidden"
+            role="dialog"
+            aria-modal="true"
+            aria-label={isRTL ? "منوی ناوبری" : "Navigation menu"}
+            id="mobile-menu"
           >
             <motion.div
               initial={{ x: slideDirection }}
@@ -116,12 +148,13 @@ export default function Navbar() {
                   onClick={() => setIsMobileMenuOpen(false)}
                   className="w-10 h-10 rounded-full border border-luxury dark:border-gold/20 flex items-center justify-center text-brand dark:text-gold hover:bg-brand/5 dark:hover:bg-gold/5 transition-colors"
                   aria-label="Close menu"
+                  type="button"
                 >
                   <X size={20} />
                 </button>
               </div>
 
-              <nav className="flex-1 flex flex-col justify-center px-8 gap-6">
+              <nav className="flex-1 flex flex-col justify-center px-8 gap-6" aria-label="Mobile navigation">
                 {navItems.map((item, i) => {
                   const href =
                     item.path === "/" ? `/${locale}` : `/${locale}${item.path}`;

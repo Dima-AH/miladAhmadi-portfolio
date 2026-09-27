@@ -23,7 +23,10 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="relative bg-brand dark:bg-deep-black overflow-hidden">
+    <footer
+      className="relative bg-brand dark:bg-deep-black overflow-hidden"
+      aria-label="Site footer"
+    >
       {/* Top Decorative Line */}
       <div className="h-px w-full line-gold" />
 
@@ -60,7 +63,7 @@ export default function Footer() {
           </div>
 
           {/* Navigation */}
-          <div className="lg:col-span-3">
+          <nav className="lg:col-span-3" aria-label="Footer navigation">
             <div
               className={`text-[10px] uppercase tracking-[0.3em] text-gold mb-6 ${isRTL ? "font-peyda" : ""}`}
             >
@@ -78,7 +81,7 @@ export default function Footer() {
                 </li>
               ))}
             </ul>
-          </div>
+          </nav>
 
           {/* Social & Contact */}
           <div className="lg:col-span-4">
