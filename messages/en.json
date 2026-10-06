@@ -10,7 +10,6 @@
     "articles": "articles"
   },
   "hero": {
-    "badge": "Available for Projects · 2026",
     "role": "Frontend Developer",
     "firstName": "Milad",
     "lastName": "Ahmadi",
@@ -24,7 +23,7 @@
     "scroll": "Scroll"
   },
   "about": {
-    "label": "01 — About",
+    "label": "About",
     "title": "Where <em>craftsmanship</em> meets code.",
     "basedInLabel": "Based in",
     "basedInValue": "Yazd, Iran",
@@ -37,7 +36,7 @@
     }
   },
   "skills": {
-    "label": "02 — Expertise",
+    "label": "Expertise",
     "title": "Technologies & <em>Tools of the Trade</em>",
     "coreTitle": "Core Technologies",
     "core": [
@@ -68,7 +67,7 @@
     "quote": "\"The right tool for the right challenge — selected with precision.\""
   },
   "experience": {
-    "label": "03 — Career",
+    "label": "Career",
     "title": "Professional <em>Journey</em>",
     "subtitle": "A focused path through modern frontend development, building enterprise-grade applications with cutting-edge technologies.",
     "items": [
@@ -95,7 +94,7 @@
     "durationLabel": "Duration"
   },
   "projects": {
-    "label": "04 — Selected Work",
+    "label": "Selected Work",
     "title": "Featured <em>Projects</em>",
     "saafaaLink": "View Saafaa Products",
     "roleLabel": "Role",
@@ -143,7 +142,7 @@
     ]
   },
   "education": {
-    "label": "05 — Education",
+    "label": "Education",
     "title": "Academic <em>Background</em>",
     "items": [
       {
@@ -162,7 +161,7 @@
     "currentBadge": "Current"
   },
   "contact": {
-    "label": "06 — Contact",
+    "label": "Contact",
     "title": "Let's build <em>something</em> exceptional.",
     "subtitle": "Have a project in mind or want to discuss modern web architecture? I'm always open to new opportunities and creative challenges.",
     "items": [

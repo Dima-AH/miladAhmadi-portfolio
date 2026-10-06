@@ -85,13 +85,13 @@ export default function Skills() {
                       {skill.desc}
                     </p>
                   </div>
-                  <div className="w-12 h-12 rounded-full border border-gold/30 flex items-center justify-center group-hover:bg-gold group-hover:text-brand transition-all duration-500 text-gold">
+                  {/* <div className="w-12 h-12 rounded-full border border-gold/30 flex items-center justify-center group-hover:bg-gold group-hover:text-brand transition-all duration-500 text-gold">
                     <span
                       className={`font-display text-xl font-bold ${locale === "fa" ? "font-peyda" : ""}`}
                     >
                       {String(i + 1).padStart(2, "0")}
                     </span>
-                  </div>
+                  </div> */}
                 </div>
               </motion.div>
             ))}
@@ -119,7 +119,7 @@ export default function Skills() {
                     viewport={{ once: true }}
                     transition={{ delay: i * 0.03 }}
                     whileHover={{ scale: 1.05 }}
-                    className={`px-4 py-2 border border-ivory/10 text-sm text-ivory/80 rounded-full hover:border-gold hover:text-gold hover:bg-gold/10 transition-all duration-300 cursor-default ${
+                    className={`px-4 py-2 border border-ivory/10 text-sm text-ivory/80 rounded-full  transition-all duration-300 cursor-default ${
                       locale === "fa" ? "font-peyda" : ""
                     }`}
                   >

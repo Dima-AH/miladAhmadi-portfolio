@@ -13,7 +13,7 @@ export default function Hero() {
 
   return (
     <section
-      aria-label={t("hero.badge")}
+      // aria-label={t("hero.badge")}
       className="relative h-[100vh] overflow-hidden gradient-cinematic"
     >
       {/* Animated Light Effects */}
@@ -35,7 +35,7 @@ export default function Hero() {
       {/* Content */}
       <div className="relative z-10 max-w-[1600px] mx-auto px-6 md:px-12 pt-12 md:pt-20 pb-20 min-h-screen flex flex-col justify-center">
         {/* Top Badge */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
@@ -50,7 +50,7 @@ export default function Hero() {
               {t("hero.badge")}
             </span>
           </div>
-        </motion.div>
+        </motion.div> */}
 
         {/* Main Title */}
         <div className="mb-12">

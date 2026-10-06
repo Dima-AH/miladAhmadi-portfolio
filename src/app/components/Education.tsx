@@ -92,13 +92,6 @@ export default function Education() {
                       {edu.degree}
                     </p>
                   </div>
-                  <div
-                    className={`w-16 h-16 rounded-full border border-gold/30 flex items-center justify-center text-gold font-display text-xl ${
-                      locale === "fa" ? "font-peyda font-bold" : ""
-                    }`}
-                  >
-                    {String(i + 1).padStart(2, "0")}
-                  </div>
                 </div>
               </motion.div>
             ))}
