@@ -94,45 +94,6 @@ export default function About() {
             >
               {t("p2")}
             </motion.p>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.5 }}
-              className="grid grid-cols-3 gap-8 pt-12 border-t border-luxury"
-            >
-              <div>
-                <div className={`font-display text-5xl md:text-6xl text-brand dark:text-gold font-light ${
-                  locale === "fa" ? "font-peyda font-black" : ""
-                }`}>
-                  1+
-                </div>
-                <div className="text-xs uppercase tracking-[0.2em] text-luxury-muted dark:text-luxury-darkMuted mt-2">
-                  {t("stats.years")}
-                </div>
-              </div>
-              <div>
-                <div className={`font-display text-5xl md:text-6xl text-brand dark:text-gold font-light ${
-                  locale === "fa" ? "font-peyda font-black" : ""
-                }`}>
-                  4+
-                </div>
-                <div className="text-xs uppercase tracking-[0.2em] text-luxury-muted dark:text-luxury-darkMuted mt-2">
-                  {t("stats.projects")}
-                </div>
-              </div>
-              <div>
-                <div className={`font-display text-5xl md:text-6xl text-brand dark:text-gold font-light ${
-                  locale === "fa" ? "font-peyda font-black" : ""
-                }`}>
-                  3
-                </div>
-                <div className="text-xs uppercase tracking-[0.2em] text-luxury-muted dark:text-luxury-darkMuted mt-2">
-                  {t("stats.frameworks")}
-                </div>
-              </div>
-            </motion.div>
           </div>
         </div>
       </div>

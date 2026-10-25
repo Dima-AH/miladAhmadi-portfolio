@@ -28,12 +28,7 @@
     "basedInLabel": "Based in",
     "basedInValue": "Yazd, Iran",
     "p1": "I am a Frontend Developer specializing in building exceptional digital experiences. My expertise spans React, Next.js, Angular, and Vue.js — the pillars of modern frontend architecture.",
-    "p2": "Currently contributing to innovative solutions at Saafaa while taking on select freelance projects. I believe true quality lies in the details: clean architecture, thoughtful animations, and an unwavering commitment to user-centric design.",
-    "stats": {
-      "years": "Years Coding",
-      "projects": "Major Projects",
-      "frameworks": "Core Frameworks"
-    }
+    "p2": "Currently contributing to innovative solutions at Saafaa while taking on select freelance projects. I believe true quality lies in the details: clean architecture, thoughtful animations, and an unwavering commitment to user-centric design."
   },
   "skills": {
     "label": "Expertise",
@@ -73,7 +68,7 @@
     "items": [
       {
         "period": "Present",
-        "duration": "6 months",
+        "duration": "7 months",
         "company": "Saafaa",
         "role": "Angular / Next.js Developer",
         "type": "Full-time & Freelance",
