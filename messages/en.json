@@ -141,8 +141,8 @@
     "items": [
       {
         "period": "2026 – Present",
-        "current": true,
-        "institution": "Yazd University",
+        "current": false,
+        "institution": "Shahid Sadoughi University",
         "degree": "Bachelor's Degree"
       },
       {
