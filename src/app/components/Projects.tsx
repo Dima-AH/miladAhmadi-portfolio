@@ -499,21 +499,6 @@ export default function Projects() {
               })}
             </h2>
           </div>
-
-          <div className="lg:text-end">
-            <Link
-              href="https://geotajak.ir/products"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`inline-flex items-center gap-2 border-b border-current pb-1 text-sm uppercase tracking-[0.2em] text-luxury-muted transition-colors hover:text-brand dark:text-luxury-darkMuted dark:hover:text-gold ${
-                locale === "fa" ? "font-peyda" : ""
-              }`}
-            >
-              {t("saafaaLink")}
-
-              <ExternalLink size={14} />
-            </Link>
-          </div>
         </div>
 
         {/* Projects List */}
