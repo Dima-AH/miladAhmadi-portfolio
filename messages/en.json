@@ -71,8 +71,8 @@
         "duration": "7 months",
         "company": "Saafaa",
         "role": "Angular / Next.js Developer",
-        "type": "Full-time & Freelance",
-        "current": true,
+        "type": "Full-time",
+        "current": false,
         "desc": "Developing internal enterprise applications and geospatial features. Also actively taking on select freelance projects."
       },
       {
