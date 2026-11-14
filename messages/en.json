@@ -7,13 +7,14 @@
     "experience": "Experience",
     "projects": "Projects",
     "contact": "Contact",
-    "articles": "articles"
+    "articles": "Articles"
   },
   "hero": {
+    "badge": "Open to Opportunities · 2026",
     "role": "Frontend Developer",
     "firstName": "Milad",
     "lastName": "Ahmadi",
-    "description": "Crafting <em>modern, scalable</em>, and high-quality web applications with meticulous attention to detail, performance, and elegant user experiences.",
+    "description": "Building modern web applications with a focus on <em>scalable architecture, maintainable code</em>, performance, and thoughtful user experiences.",
     "ctaProjects": "View Projects",
     "ctaContact": "Contact Me",
     "github": "GitHub",
@@ -24,23 +25,29 @@
   },
   "about": {
     "label": "About",
-    "title": "Where <em>craftsmanship</em> meets code.",
+    "title": "Where <em>engineering</em> meets user experience.",
     "basedInLabel": "Based in",
     "basedInValue": "Yazd, Iran",
-    "p1": "I am a Frontend Developer specializing in building exceptional digital experiences. My expertise spans React, Next.js, Angular, and Vue.js — the pillars of modern frontend architecture.",
-    "p2": "I’m currently working independently on freelance projects and exploring opportunities to join a professional team where I can collaborate with other developers and contribute to building high-quality, scalable web products. I value continuous learning, clean architecture, and crafting thoughtful user experiences."
+    "p1": "I'm a Frontend Developer focused on building modern, scalable, and user-centered web applications. I primarily work with React, Next.js, and Angular, with an emphasis on component architecture, maintainable code, and performance optimization. I also have experience working with Vue.js.",
+    "p2": "I enjoy solving complex frontend challenges, collaborating with development teams, and turning ideas into reliable digital products. My experience includes working on enterprise applications, data-driven interfaces, and geospatial platforms, which has helped me develop a deeper understanding of frontend engineering. I'm continuously improving my engineering skills and looking for opportunities to collaborate with professional teams and contribute to meaningful products."
   },
   "skills": {
     "label": "Expertise",
-    "title": "Technologies & <em>Tools of the Trade</em>",
+    "title": "Technologies & <em>Development Tools</em>",
     "coreTitle": "Core Technologies",
     "core": [
       {
         "name": "React / Next.js",
-        "desc": "Component architecture, SSR, App Router"
+        "desc": "Component Architecture, App Router, Server-Side Rendering"
       },
-      { "name": "Angular", "desc": "Enterprise applications, RxJS, NG-ZORRO" },
-      { "name": "Vue.js", "desc": "Reactive systems, composition API" }
+      {
+        "name": "Angular",
+        "desc": "Enterprise Applications, RxJS, NG-ZORRO"
+      },
+      {
+        "name": "Vue.js",
+        "desc": "Composition API, Reactive Interfaces"
+      }
     ],
     "toolsTitle": "Ecosystem & Utilities",
     "tools": [
@@ -48,8 +55,8 @@
       "JavaScript",
       "HTML",
       "CSS",
-      "Bootstrap",
       "Tailwind CSS",
+      "Bootstrap",
       "RxJS",
       "OpenLayers",
       "Git",
@@ -59,42 +66,42 @@
       "Figma",
       "GSAP"
     ],
-    "quote": "\"The right tool for the right challenge — selected with precision.\""
+    "quote": "\"The right tool for the right challenge, chosen with purpose and precision.\""
   },
   "experience": {
     "label": "Career",
     "title": "Professional <em>Journey</em>",
-    "subtitle": "A focused path through modern frontend development, building enterprise-grade applications with cutting-edge technologies.",
+    "subtitle": "Experience in modern frontend development, from web applications to enterprise systems and data-driven products.",
     "items": [
       {
         "period": "Present",
         "duration": "Ongoing",
         "company": "Independent (Freelance)",
-        "role": "Frontend Developer (Freelance)",
+        "role": "Frontend Developer",
         "type": "Freelance",
         "current": false,
-        "desc": "Currently working independently on frontend development projects, focusing on building responsive user interfaces, improving user experiences, and developing web applications. I am also open to joining a professional team and contributing to the development of web products."
+        "desc": "Working independently on frontend development projects, focusing on responsive user interfaces, practical product features, and improved user experiences. I aim to deliver structured, maintainable code and choose technical solutions that align with each product's requirements. I'm also open to joining professional teams and contributing to the development of web products."
       },
       {
-        "period": "Past",
+        "period": "Previous",
         "duration": "8 months",
         "company": "Saafaa",
         "role": "Angular / Next.js Developer",
         "type": "Full-time",
         "current": false,
-        "desc": "Saafaa is an Iranian knowledge-based technology company specializing in the design and development of Geographic Information Systems (GIS) and Spatial Data Infrastructure (SDI) solutions. Leveraging open-source technologies and artificial intelligence, the company delivers intelligent platforms for managing, analyzing, and integrating organizational and national geospatial data."
+        "desc": "Contributed to the frontend development of enterprise and GIS-based applications using Angular and Next.js. Worked with complex data-driven interfaces, reusable components, dynamic form generation, and geospatial technologies. This experience strengthened my understanding of frontend architecture and the development of enterprise-scale software products."
       },
       {
-        "period": "Past",
+        "period": "Previous",
         "duration": "3 months",
         "company": "Chabok Andishan Parandeh Afarin",
         "role": "React / Next.js Developer",
-        "type": "Contract",
+        "type": "Internship & Contract",
         "current": false,
-        "desc": "Chabok is a software group specializing in website and web application development. Its services include custom web applications, UI and graphic design, content production, and search engine optimization. During my three-month engagement, I worked as a React / Next.js Developer, contributing to frontend development"
+        "desc": "Contributed to the implementation and development of user interfaces for websites and web applications. This role provided practical experience in a professional software development environment, working with React and Next.js, and translating designs and requirements into functional user interfaces."
       }
     ],
-    "currentBadge": "Now",
+    "currentBadge": "Present",
     "durationLabel": "Duration"
   },
   "projects": {
@@ -110,44 +117,44 @@
         "year": "2026",
         "type": "Public",
         "role": "Frontend Developer",
-        "desc": "A nationwide platform for sharing tours and events, featuring dynamic content rendering and seamless user interactions.",
+        "desc": "A nationwide platform for discovering and sharing tours and events. Contributed to its frontend development, focusing on dynamic content presentation, page structure, and seamless user interactions.",
         "link": "https://rooydado.com"
       },
       {
         "name": "GeoNet",
-        "tech": "Angular",
+        "tech": "Angular / TypeScript",
         "company": "Saafaa",
         "year": "2026",
         "type": "Private Project",
         "role": "Angular Developer",
-        "desc": "national smart platform for geospatial services and content, providing an integrated infrastructure for exchanging, sharing, and utilizing geospatial data and services. It aims to advance data-driven governance, enhance interoperability across organizations, and support the development of smart government."
+        "desc": "A national platform for geospatial services and content, designed to provide integrated infrastructure for exchanging, sharing, and utilizing geographic data and services. Contributed to frontend development, implementing user interfaces, and upgrading the application across multiple major Angular versions."
       },
       {
         "name": "GeoTajak",
-        "tech": "Angular",
+        "tech": "Angular / TypeScript / OpenLayers",
         "company": "Saafaa",
         "year": "2026",
         "type": "Private Project",
         "role": "Angular Developer",
-        "desc": "an open-source, web-based WebGIS platform designed for managing, editing, and integrating organizational geospatial data. With features such as geospatial layer management, standard OGC services, access control, and spatial analysis, it provides a comprehensive solution for intelligent geospatial data management."
+        "desc": "An enterprise WebGIS platform for managing, editing, and integrating geospatial data. Contributed to frontend development, including geospatial layer management, dynamic form generation, and data-driven interfaces using Angular and GIS technologies."
       },
       {
         "name": "FMS",
-        "tech": "Angular",
+        "tech": "Angular / TypeScript",
         "company": "Saafaa",
         "year": "2026",
         "type": "Private Project",
         "role": "Angular Developer",
-        "desc": "Fleet Management System (FMS) is a comprehensive platform for monitoring and controlling vehicles and equipment. Built on the powerful Traccar platform, it offers advanced capabilities for efficient fleet management."
+        "desc": "A fleet management platform for monitoring and controlling vehicles and equipment, built on the Traccar platform. Contributed to frontend development, implementing management and data-driven interfaces, and upgrading the application across multiple major Angular versions."
       },
       {
         "name": "Montazer Ghaem Technical School",
-        "tech": "",
+        "tech": "HTML / CSS",
         "company": "",
         "year": "2025",
         "type": "Public",
         "role": "Frontend Developer",
-        "desc": "My first website project, developed for Montazer Qaim Technical School. The website showcases educational programs, school facilities, faculty members, student achievements, and provides a platform for school updates and meeting requests.",
+        "desc": "My first website project, developed for Montazer Ghaem Technical School. The website introduces educational programs, school facilities, faculty members, and student achievements, while providing a platform for school news, announcements, and meeting requests.",
         "link": "https://montazer-edu.ir"
       }
     ]
@@ -158,7 +165,7 @@
     "items": [
       {
         "period": "2026 – Present",
-        "current": false,
+        "current": true,
         "institution": "Shahid Sadoughi University",
         "degree": "Bachelor's Degree"
       },
@@ -169,12 +176,12 @@
         "degree": "Technical Diploma"
       }
     ],
-    "currentBadge": "Current"
+    "currentBadge": "Currently Studying"
   },
   "contact": {
     "label": "Contact",
-    "title": "Let's build <em>something</em> exceptional.",
-    "subtitle": "Have a project in mind or want to discuss modern web architecture? I'm always open to new opportunities and creative challenges.",
+    "title": "Let's build something <em>meaningful</em>.",
+    "subtitle": "Have a project in mind or looking for a frontend development collaborator? I'd be happy to connect and discuss ideas, technical challenges, and potential opportunities.",
     "items": [
       {
         "label": "Phone",
@@ -201,12 +208,12 @@
   "footer": {
     "name": "Milad Ahmadi",
     "role": "Frontend Developer",
-    "desc": "Crafting modern, scalable, and high-quality web applications with meticulous attention to detail and elegant user experiences.",
+    "desc": "Engineering thoughtful interfaces, building maintainable systems, and turning complex challenges into reliable digital experiences.",
     "navTitle": "Navigation",
     "connectTitle": "Connect",
     "phoneTitle": "Phone",
     "copyright": "© {year} Milad Ahmadi. All Rights Reserved.",
-    "crafted": "Crafted with precision in Yazd, Iran",
+    "crafted": "Crafted with care in Yazd, Iran.",
     "phone": "+98 998 250 7377"
   },
   "articles": {
@@ -216,7 +223,7 @@
     "readTime": "min read",
     "categories": {
       "engineering": "Engineering",
-      "architecture": "Architecture",
+      "architecture": "Software Architecture",
       "design": "Design"
     }
   }
