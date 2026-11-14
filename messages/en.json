@@ -28,7 +28,7 @@
     "basedInLabel": "Based in",
     "basedInValue": "Yazd, Iran",
     "p1": "I am a Frontend Developer specializing in building exceptional digital experiences. My expertise spans React, Next.js, Angular, and Vue.js — the pillars of modern frontend architecture.",
-    "p2": "Currently contributing to innovative solutions at Saafaa while taking on select freelance projects. I believe true quality lies in the details: clean architecture, thoughtful animations, and an unwavering commitment to user-centric design."
+    "p2": "I’m currently working independently on freelance projects and exploring opportunities to join a professional team where I can collaborate with other developers and contribute to building high-quality, scalable web products. I value continuous learning, clean architecture, and crafting thoughtful user experiences."
   },
   "skills": {
     "label": "Expertise",
@@ -68,7 +68,16 @@
     "items": [
       {
         "period": "Present",
-        "duration": "7 months",
+        "duration": "Ongoing",
+        "company": "Independent (Freelance)",
+        "role": "Frontend Developer (Freelance)",
+        "type": "Freelance",
+        "current": false,
+        "desc": "Currently working independently on frontend development projects, focusing on building responsive user interfaces, improving user experiences, and developing web applications. I am also open to joining a professional team and contributing to the development of web products."
+      },
+      {
+        "period": "Past",
+        "duration": "8 months",
         "company": "Saafaa",
         "role": "Angular / Next.js Developer",
         "type": "Full-time",
@@ -82,7 +91,7 @@
         "role": "React / Next.js Developer",
         "type": "Contract",
         "current": false,
-        "desc": "Developed responsive, high-performance web applications focusing on component reusability and state management."
+        "desc": "Chabok is a software group specializing in website and web application development. Its services include custom web applications, UI and graphic design, content production, and search engine optimization. During my three-month engagement, I worked as a React / Next.js Developer, contributing to frontend development"
       }
     ],
     "currentBadge": "Now",
@@ -133,12 +142,12 @@
       },
       {
         "name": "Montazer Ghaem Technical School",
-        "tech": "Html/css",
+        "tech": "",
         "company": "",
         "year": "2025",
         "type": "Public",
         "role": "Frontend Developer",
-        "desc": "My first website project, developed for Montazer Ghaem Technical School. The website showcases educational programs, school facilities, faculty members, student achievements, and provides a platform for school updates and meeting requests.",
+        "desc": "My first website project, developed for Montazer Qaim Technical School. The website showcases educational programs, school facilities, faculty members, student achievements, and provides a platform for school updates and meeting requests.",
         "link": "https://montazer-edu.ir"
       }
     ]
