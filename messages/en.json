@@ -73,7 +73,7 @@
         "role": "Angular / Next.js Developer",
         "type": "Full-time",
         "current": false,
-        "desc": "Developing internal enterprise applications and geospatial features. Also actively taking on select freelance projects."
+        "desc": "Saafaa is an Iranian knowledge-based technology company specializing in the design and development of Geographic Information Systems (GIS) and Spatial Data Infrastructure (SDI) solutions. Leveraging open-source technologies and artificial intelligence, the company delivers intelligent platforms for managing, analyzing, and integrating organizational and national geospatial data."
       },
       {
         "period": "Past",
@@ -111,17 +111,16 @@
         "year": "2026",
         "type": "Private Project",
         "role": "Angular Developer",
-        "desc": "Professional geospatial networking platform featuring complex data visualization and mapping integrations."
+        "desc": "national smart platform for geospatial services and content, providing an integrated infrastructure for exchanging, sharing, and utilizing geospatial data and services. It aims to advance data-driven governance, enhance interoperability across organizations, and support the development of smart government."
       },
       {
-        "name": "GeoTajak Amayesh",
-        "tech": "Next.js",
+        "name": "GeoTajak",
+        "tech": "Angular",
         "company": "Saafaa",
         "year": "2026",
         "type": "Private Project",
-        "role": "Next.js Developer",
-        "link": "https://geotajak.ir/products/geotajak",
-        "desc": "Advanced spatial analysis and mapping application optimized for performance and large dataset handling."
+        "role": "Angular Developer",
+        "desc": "an open-source, web-based WebGIS platform designed for managing, editing, and integrating organizational geospatial data. With features such as geospatial layer management, standard OGC services, access control, and spatial analysis, it provides a comprehensive solution for intelligent geospatial data management."
       },
       {
         "name": "FMS",
@@ -129,9 +128,18 @@
         "company": "Saafaa",
         "year": "2026",
         "type": "Private Project",
+        "role": "Angular Developer",
+        "desc": "Fleet Management System (FMS) is a comprehensive platform for monitoring and controlling vehicles and equipment. Built on the powerful Traccar platform, it offers advanced capabilities for efficient fleet management."
+      },
+      {
+        "name": "Montazer Ghaem Technical School",
+        "tech": "Html/css",
+        "company": "",
+        "year": "2025",
+        "type": "Public",
         "role": "Frontend Developer",
-        "link": "https://geotajak.ir/products/fms",
-        "desc": "Comprehensive Fleet Management System utilizing NG-ZORRO and RxJS for robust state management."
+        "desc": "My first website project, developed for Montazer Ghaem Technical School. The website showcases educational programs, school facilities, faculty members, student achievements, and provides a platform for school updates and meeting requests.",
+        "link": "https://montazer-edu.ir"
       }
     ]
   },

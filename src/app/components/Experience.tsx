@@ -164,7 +164,7 @@ export default function Experience() {
                       </span>
                     </div>
                     <p
-                      className={`text-luxury-muted dark:text-luxury-darkMuted leading-relaxed max-w-2xl ${
+                      className={`text-luxury-muted dark:text-luxury-darkMuted leading-relaxed max-w-4xl ${
                         locale === "fa" ? "font-peyda" : ""
                       }`}
                     >
