@@ -28,7 +28,7 @@
     "title": "Where <em>engineering</em> meets user experience.",
     "basedInLabel": "Based in",
     "basedInValue": "Yazd, Iran",
-    "p1": "I'm a Frontend Developer focused on building modern, scalable, and user-centered web applications. I primarily work with React, Next.js, and Angular, with an emphasis on component architecture, maintainable code, and performance optimization. I also have experience working with Vue.js.",
+    "p1": "I'm a Frontend Developer focused on building modern, scalable, and user-centered web applications. I primarily work with React, Next.js, and Angular, with an emphasis on component architecture, maintainable code, and performance optimization. I also have experience working with Vue/Nuxt.",
     "p2": "I enjoy solving complex frontend challenges, collaborating with development teams, and turning ideas into reliable digital products. My experience includes working on enterprise applications, data-driven interfaces, and geospatial platforms, which has helped me develop a deeper understanding of frontend engineering. I'm continuously improving my engineering skills and looking for opportunities to collaborate with professional teams and contribute to meaningful products."
   },
   "skills": {
@@ -45,7 +45,7 @@
         "desc": "Enterprise Applications, RxJS, NG-ZORRO"
       },
       {
-        "name": "Vue.js",
+        "name": "Vue/Nuxt",
         "desc": "Composition API, Reactive Interfaces"
       }
     ],
@@ -84,7 +84,7 @@
       },
       {
         "period": "Previous",
-        "duration": "8 months",
+        "duration": "9 months",
         "company": "Saafaa",
         "role": "Angular / Next.js Developer",
         "type": "Full-time",
@@ -112,7 +112,7 @@
     "items": [
       {
         "name": "Rooydado",
-        "tech": "Vue.js",
+        "tech": "Vue/Nuxt",
         "company": "",
         "year": "2026",
         "type": "Public",
