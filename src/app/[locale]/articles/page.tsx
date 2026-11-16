@@ -42,7 +42,15 @@ export async function generateMetadata({
   };
 }
 
-export default function ArticlesPage() {
+export default async function ArticlesPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  const isFa = locale === "fa";
+  const url = `${SITE_URL}/${locale}/articles`;
+
   const breadcrumbJsonLd = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -50,14 +58,14 @@ export default function ArticlesPage() {
       {
         "@type": "ListItem",
         position: 1,
-        name: "Home",
-        item: `${SITE_URL}/en`,
+        name: isFa ? "خانه" : "Home",
+        item: `${SITE_URL}/${locale}`,
       },
       {
         "@type": "ListItem",
         position: 2,
-        name: "Articles",
-        item: `${SITE_URL}/en/articles`,
+        name: isFa ? "مقالات" : "Articles",
+        item: url,
       },
     ],
   };

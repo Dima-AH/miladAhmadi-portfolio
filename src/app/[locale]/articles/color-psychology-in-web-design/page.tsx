@@ -49,7 +49,9 @@ export async function generateMetadata({
       description,
       url,
       locale: isFa ? "fa_IR" : "en_US",
+      alternateLocale: isFa ? "en_US" : "fa_IR",
       publishedTime: "2026-11-14",
+      modifiedTime: "2026-11-14",
       authors: ["Milad Ahmadi"],
       tags: [
         "color psychology",
@@ -58,12 +60,33 @@ export async function generateMetadata({
         "frontend",
         "accessibility",
       ],
+      images: [
+        {
+          url: "/og-image.png",
+          width: 1200,
+          height: 630,
+          alt: title,
+        },
+      ],
     },
 
     twitter: {
       card: "summary_large_image",
       title,
       description,
+      images: ["/og-image.png"],
+      creator: "@Dima_devs",
+    },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        "max-video-preview": -1,
+        "max-image-preview": "large",
+        "max-snippet": -1,
+      },
     },
   };
 }

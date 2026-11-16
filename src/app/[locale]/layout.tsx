@@ -8,7 +8,7 @@ import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import { Analytics } from "@vercel/analytics/next";
 import Script from "next/script";
-import { SpeedInsights } from "@vercel/speed-insights/next"
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -91,6 +91,8 @@ export async function generateMetadata({
     : "Elite frontend developer specializing in React, Next.js, Angular, and Vue.js. Building exceptional web experiences with meticulous craftsmanship, performance and elegant UX.";
 
   const url = `${SITE_URL}/${locale}`;
+  const faUrl = `${SITE_URL}/fa`;
+  const enUrl = `${SITE_URL}/en`;
 
   return {
     metadataBase: new URL(SITE_URL),
@@ -102,9 +104,9 @@ export async function generateMetadata({
     alternates: {
       canonical: url,
       languages: {
-        en: `${SITE_URL}/en`,
-        fa: `${SITE_URL}/fa`,
-        "x-default": `${SITE_URL}/en`,
+        en: enUrl,
+        fa: faUrl,
+        "x-default": enUrl,
       },
     },
     openGraph: {
@@ -121,6 +123,7 @@ export async function generateMetadata({
           width: 1200,
           height: 630,
           alt: SITE_NAME,
+          type: "image/png",
         },
       ],
     },
@@ -147,10 +150,32 @@ export async function generateMetadata({
     publisher: SITE_NAME,
     category: "technology",
     icons: {
-      icon: "/favicon.ico",
+      icon: [
+        { url: "/favicon.svg", sizes: "any", type: "image/svg+xml" },
+        { url: "/site-icon.svg", sizes: "32x32", type: "image/svg+xml" },
+      ],
+      apple: [{ url: "/apple-touch-icon.svg", sizes: "180x180", type: "image/svg+xml" }],
+      other: [
+        {
+          rel: "shortcut icon",
+          url: "/favicon.svg",
+          sizes: "any",
+          type: "image/svg+xml",
+        },
+        {
+          rel: "mask-icon",
+          url: "/favicon.svg",
+          color: "#023020",
+        },
+      ],
     },
     verification: {
-      // google: "verification_token",
+      google: process.env.NEXT_PUBLIC_GOOGLE_VERIFICATION || undefined,
+    },
+    other: {
+      "theme-color": ["#023020", "#050505"],
+      "msapplication-TileColor": "#023020",
+      "msapplication-TileImage": "/apple-touch-icon.svg",
     },
   };
 }
@@ -163,7 +188,7 @@ export const viewport: Viewport = {
   colorScheme: "dark light",
   width: "device-width",
   initialScale: 1,
-  maximumScale: 5,
+  // maximum-scale حذف شد تا زوم کاربر محدود نشد (دسترسی‌پذیری بهتر)
 };
 
 export default async function RootLayout({
@@ -215,10 +240,50 @@ export default async function RootLayout({
       "@type": "Person",
       name: SITE_NAME,
     },
+    potentialAction: {
+      "@type": "SearchAction",
+      target: `${SITE_URL}/?q={search_term_string}`,
+      "query-input": "required name=search_term_string",
+    },
+  };
+
+  const organizationJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: SITE_NAME,
+    url: SITE_URL,
+    logo: `${SITE_URL}/og-image.png`,
+    sameAs: [
+      "https://github.com/Dima-AH",
+      "https://linkedin.com/in/mr-ahmadi7377",
+      "https://t.me/Dima_devs",
+    ],
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Yazd",
+      addressCountry: "IR",
+    },
+    contactPoint: [
+      {
+        "@type": "ContactPoint",
+        telephone: "+989982507377",
+        contactType: "customer service",
+        availableLanguage: ["Persian", "English"],
+      },
+    ],
   };
 
   return (
     <html lang={locale} dir={isFa ? "rtl" : "ltr"} suppressHydrationWarning>
+      <head>
+        {/* Preconnect به دامنه‌های خارجی برای بهبود LCP و سرعت بارگذاری */}
+        <link rel="preconnect" href="https://github.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://linkedin.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://t.me" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://github.com" />
+        <link rel="dns-prefetch" href="https://linkedin.com" />
+        <link rel="dns-prefetch" href="https://t.me" />
+      </head>
       <body
         className={`
           ${isFa ? peyda.variable : inter.variable} 
@@ -242,8 +307,13 @@ export default async function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
         />
+        <Script
+          id="organization-jsonld"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+        />
         <Analytics />
-        <SpeedInsights/>
+        <SpeedInsights />
         <NextIntlClientProvider messages={messages}>
           <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
             <Navbar />

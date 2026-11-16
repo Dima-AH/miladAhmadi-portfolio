@@ -10,6 +10,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const routes: MetadataRoute.Sitemap = [];
 
   for (const locale of locales) {
+    // Homepage
     routes.push({
       url: `${SITE_URL}/${locale}`,
       lastModified: now,
@@ -23,6 +24,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       },
     });
 
+    // Articles index
     routes.push({
       url: `${SITE_URL}/${locale}/articles`,
       lastModified: now,
@@ -36,10 +38,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       },
     });
 
+    // Individual articles — lastModified از تاریخ thực در articles.ts
     for (const article of articles.filter((a) => a.published)) {
+      const articleDate = new Date(article.date);
       routes.push({
         url: `${SITE_URL}/${locale}/articles/${article.slug}`,
-        lastModified: now,
+        lastModified: articleDate,
         changeFrequency: "monthly",
         priority: 0.6,
         alternates: {

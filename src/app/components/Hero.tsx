@@ -65,8 +65,8 @@ export default function Hero() {
 
             {/* Full Name */}
             <h1
-              className={`font-display text-[16vw] text-center lg:text-right sm:text-[13vw] md:text-[10vw] lg:text-[7.5vw] xl:text-[7.2vw] font-light leading-[0.9] tracking-tight text-ivory ${
-                locale === "fa" ? "font-peyda font-black" : ""
+              className={`font-display text-[16vw] sm:text-[13vw] md:text-[10vw] lg:text-[7.5vw] xl:text-[7.2vw] font-light leading-[0.9] tracking-tight text-ivory ${
+                locale === "fa" ? "font-peyda font-black lg:text-right" : "lg:text-left"
               }`}
             >
               <span className="lg:block whitespace-nowrap">

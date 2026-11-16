@@ -35,53 +35,88 @@ export async function generateMetadata({
       description,
       url,
       locale: isFa ? "fa_IR" : "en_US",
+      alternateLocale: isFa ? "en_US" : "fa_IR",
       publishedTime: "2026-09-08",
       authors: ["Milad Ahmadi"],
       tags: ["cross-browser", "frontend", "compatibility"],
+      images: [
+        {
+          url: "/og-image.png",
+          width: 1200,
+          height: 630,
+          alt: title,
+        },
+      ],
     },
     twitter: {
       card: "summary_large_image",
       title,
       description,
+      images: ["/og-image.png"],
+      creator: "@Dima_devs",
+    },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        "max-video-preview": -1,
+        "max-image-preview": "large",
+        "max-snippet": -1,
+      },
     },
   };
 }
 
-export default function Page() {
-  // JSON-LD is inserted client-side wrapper needs locale, so we generate both variants statically
-  const jsonLdEn = {
+export default async function Page({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  const isFa = locale === "fa";
+  const article = articles.find((a) => a.slug === "cross-browser-compatibility");
+  const url = `${SITE_URL}/${locale}/articles/cross-browser-compatibility`;
+
+  const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Article",
-    headline: "The Rogue Translators of the Web: Mastering Cross-Browser Compatibility",
-    description:
-      "Why does your flawless design break in Safari? Discover the conceptual reality of browser rendering and how modern frontend engineering ensures a seamless experience.",
-    author: { "@type": "Person", name: "Milad Ahmadi", url: `${SITE_URL}/en` },
+    headline: isFa ? article?.titleFa : article?.title,
+    description: isFa ? article?.excerptFa : article?.excerpt,
+    author: {
+      "@type": "Person",
+      name: isFa ? "میلاد احمدی" : "Milad Ahmadi",
+      url: `${SITE_URL}/${locale}`,
+    },
     datePublished: "2026-09-08",
-    inLanguage: "en-US",
-    mainEntityOfPage: `${SITE_URL}/en/articles/cross-browser-compatibility`,
+    inLanguage: isFa ? "fa-IR" : "en-US",
+    mainEntityOfPage: url,
   };
-  const jsonLdFa = {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    headline: "مترجم‌های سرکش وب: هنر تضمین تجربه کاربری یکپارچه در دنیای مرورگرها",
-    description:
-      "چرا طراحی بی‌نقص شما در سافاری به هم می‌ریزد؟ با واقعیت مفهومی رندرینگ مرورگرها و نحوه مهندسی فرانت‌اند مدرن آشنا شوید.",
-    author: { "@type": "Person", name: "میلاد احمدی", url: `${SITE_URL}/fa` },
-    datePublished: "2026-09-08",
-    inLanguage: "fa-IR",
-    mainEntityOfPage: `${SITE_URL}/fa/articles/cross-browser-compatibility`,
-  };
+
   const breadcrumb = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home", item: `${SITE_URL}/en` },
-      { "@type": "ListItem", position: 2, name: "Articles", item: `${SITE_URL}/en/articles` },
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: isFa ? "خانه" : "Home",
+        item: `${SITE_URL}/${locale}`,
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: isFa ? "مقالات" : "Articles",
+        item: `${SITE_URL}/${locale}/articles`,
+      },
       {
         "@type": "ListItem",
         position: 3,
-        name: "Cross-Browser Compatibility",
-        item: `${SITE_URL}/en/articles/cross-browser-compatibility`,
+        name: isFa
+          ? "مترجم‌های سرکش وب"
+          : "Cross-Browser Compatibility",
+        item: url,
       },
     ],
   };
@@ -89,20 +124,21 @@ export default function Page() {
   return (
     <>
       <Script
-        id="article-jsonld-en"
+        id="article-jsonld"
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdEn) }}
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c"),
+        }}
       />
-      <Script
-        id="article-jsonld-fa"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdFa) }}
-      />
+
       <Script
         id="breadcrumb-article"
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }}
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumb).replace(/</g, "\\u003c"),
+        }}
       />
+
       <ArticleClient />
     </>
   );
