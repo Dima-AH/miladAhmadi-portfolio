@@ -130,6 +130,15 @@
         "desc": "A national platform for geospatial services and content, designed to provide integrated infrastructure for exchanging, sharing, and utilizing geographic data and services. Contributed to frontend development, implementing user interfaces, and upgrading the application across multiple major Angular versions."
       },
       {
+        "name": "GeoTajak Amayesh",
+        "tech": "Next.js / React / TypeScript / OpenLayers / Axios / Proj4 / Recharts",
+        "company": "Saafaa",
+        "year": "2026",
+        "type": "Private Project",
+        "role": "Project Lead & Frontend Developer",
+        "desc": "An intelligent land management platform designed to manage and organize land-related information, with integrated analytical capabilities. I led the project from its initial foundation to completion, taking responsibility for its overall direction and core frontend architecture. Built the application's foundation using Next.js and personally implemented a major portion of the platform, while coordinating and collaborating with three other team members. The project integrates geospatial visualization and data-driven capabilities using technologies such as OpenLayers."
+      },
+      {
         "name": "GeoTajak",
         "tech": "Angular / TypeScript / OpenLayers",
         "company": "Saafaa",
