@@ -14,7 +14,7 @@
     "role": "Frontend Developer",
     "firstName": "Milad",
     "lastName": "Ahmadi",
-    "description": "Building modern web applications with a focus on <em>scalable architecture, maintainable code</em>, performance, and thoughtful user experiences.",
+    "description": "Building modern web applications with a focus on <em>scalable architecture, maintainable code</em>, performance, and thoughtful user experiences, driven by curiosity and a passion for exploring new technologies.",
     "ctaProjects": "View Projects",
     "ctaContact": "Contact Me",
     "github": "GitHub",
@@ -28,13 +28,13 @@
     "title": "Where <em>engineering</em> meets user experience.",
     "basedInLabel": "Based in",
     "basedInValue": "Yazd, Iran",
-    "p1": "I'm a Frontend Developer focused on building modern, scalable, and user-centered web applications. I primarily work with React, Next.js, and Angular, with an emphasis on component architecture, maintainable code, and performance optimization. I also have experience working with Vue/Nuxt.",
-    "p2": "I enjoy solving complex frontend challenges, collaborating with development teams, and turning ideas into reliable digital products. My experience includes working on enterprise applications, data-driven interfaces, and geospatial platforms, which has helped me develop a deeper understanding of frontend engineering. I'm continuously improving my engineering skills and looking for opportunities to collaborate with professional teams and contribute to meaningful products."
+    "p1": "I'm a Frontend Developer focused on building modern, scalable, and user-centered web applications. My primary hands-on experience is with React, Next.js, and Angular. I've also worked with Vue/Nuxt on real-world projects, gaining practical experience with its ecosystem and building user interfaces with these technologies.",
+    "p2": "I enjoy solving complex frontend challenges, collaborating with development teams, and turning ideas into reliable digital products. My experience includes enterprise applications, data-driven interfaces, and geospatial platforms, which has helped me develop a deeper understanding of frontend engineering. Continuous learning and expanding my technical knowledge are important parts of my professional journey. I'm curious about new technologies, enjoy exploring different tools and approaches, and am comfortable adapting to different technology stacks based on a project's requirements."
   },
   "skills": {
-    "label": "Expertise",
+    "label": "Skills & Technical Interests",
     "title": "Technologies & <em>Development Tools</em>",
-    "coreTitle": "Core Technologies",
+    "coreTitle": "Technologies I Work With",
     "core": [
       {
         "name": "React / Next.js",
@@ -45,8 +45,8 @@
         "desc": "Enterprise Applications, RxJS, NG-ZORRO"
       },
       {
-        "name": "Vue/Nuxt",
-        "desc": "Composition API, Reactive Interfaces"
+        "name": "Vue / Nuxt",
+        "desc": "Hands-on project experience, Composition API, Reactive Interfaces"
       }
     ],
     "toolsTitle": "Ecosystem & Utilities",
@@ -66,7 +66,7 @@
       "Figma",
       "GSAP"
     ],
-    "quote": "\"The right tool for the right challenge, chosen with purpose and precision.\""
+    "quote": "\"Always learning, exploring new technologies, and choosing the right tools for the challenge.\""
   },
   "experience": {
     "label": "Career",
@@ -190,7 +190,7 @@
   "contact": {
     "label": "Contact",
     "title": "Let's build something <em>meaningful</em>.",
-    "subtitle": "Have a project in mind or looking for a frontend development collaborator? I'd be happy to connect and discuss ideas, technical challenges, and potential opportunities.",
+    "subtitle": "Have a project in mind or looking for a frontend development collaborator? I enjoy meeting new teams, exploring different technical challenges, and learning new technologies. I'd be happy to connect and discuss ideas and potential opportunities.",
     "items": [
       {
         "label": "Phone",
@@ -217,7 +217,7 @@
   "footer": {
     "name": "Milad Ahmadi",
     "role": "Frontend Developer",
-    "desc": "Engineering thoughtful interfaces, building maintainable systems, and turning complex challenges into reliable digital experiences.",
+    "desc": "Building thoughtful interfaces, engineering reliable products, and continuously learning to turn complex challenges into meaningful digital experiences.",
     "navTitle": "Navigation",
     "connectTitle": "Connect",
     "phoneTitle": "Phone",
